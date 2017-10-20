@@ -1,0 +1,15 @@
+version: '2'
+services:
+  engine:
+    build: .
+    command: bin/server
+    ports:
+      - 8090:3000 # puma
+      - 3075:3065 # webpacker
+      - 1058:1048 # Byebug
+    volumes:
+      - .:/engine
+      - ./gems:/gems
+      - ./yarn_modules:/yarn_modules
+    environment:
+      - PORT=3000

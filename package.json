@@ -1,0 +1,13 @@
+{
+  "name": "typewriter",
+  "private": true,
+  "scripts": {
+    "start": "docker-sync start; docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
+    "local": "docker-sync start; docker-compose -f docker-compose.yml -f docker-compose.dev.yml run --rm engine heroku local:run",
+    "heroku": "docker-sync start; docker-compose -f docker-compose.yml -f docker-compose.dev.yml run --rm engine heroku",
+    "storybook": "docker-compose run --rm -p 6006:6006 engine /bin/sh -c 'cd typewriter_js && yarn storybook'",
+    "stop": "time docker-compose stop && time docker-sync stop",
+    "clean": "time docker-compose stop && time docker-sync stop && time docker-compose rm -f && time docker-sync clean"
+  },
+  "dependencies": {}
+}

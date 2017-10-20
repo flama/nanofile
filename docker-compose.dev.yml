@@ -1,0 +1,15 @@
+version: '2'
+services:
+  engine:
+    volumes:
+      - nanofile-engine-sync:/engine:nocopy
+      - nanofile-gems-sync:/gems:nocopy
+      - nanofile-yarn_modules-sync:/yarn_modules:nocopy
+
+volumes:
+  nanofile-engine-sync:
+    external: true
+  nanofile-gems-sync:
+    external: true
+  nanofile-yarn_modules-sync:
+    external: true
