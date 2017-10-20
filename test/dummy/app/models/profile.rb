@@ -1,4 +1,4 @@
 class Profile < ApplicationRecord
-  # has_image :avatar
-  include AvatarUploader::Attachment.new(:avatar)
+  has_image :avatar
+  # include ImageUploader::Attachment.new(:avatar)
 end

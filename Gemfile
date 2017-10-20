@@ -13,6 +13,6 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 
-# gem 'webpacker', '~> 3.0', '>= 3.0.1'
+gem 'webpacker', '~> 3.0', '3.0.1'
 gem 'byebug', group: [:development, :test]
 gem 'sass-rails', '~> 5.0', '>= 5.0.6'
