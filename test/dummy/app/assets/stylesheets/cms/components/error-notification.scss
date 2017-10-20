@@ -1,0 +1,23 @@
+$error-notification-font-size: $font-size-micro;
+
+.error-notification {
+  font-size: $error-notification-font-size;
+
+  height: calc(30px - 1rem);
+  margin-top: 12px;
+  padding-top: .5rem;
+  padding-right: 1rem;
+  padding-bottom: .5rem;
+  padding-left: 1rem;
+
+  text-align: left;
+
+  color: $color-fire-heavy;
+  background-color: $color-fire-light;
+
+  &.-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,0 +1,43 @@
+.feedback-thumbs {
+  $size-numer: $font-size-micro;
+
+  display: flex;
+  justify-content: flex-end;
+
+  & > .thumbs > .number {
+    font-size: $size-numer;
+
+    margin-top: 6px;
+
+    letter-spacing: .5px;
+
+    color: $color-bullfrog;
+  }
+
+  & > .thumbs > .icon {
+    width: 16px;
+    height: 16px;
+
+    background-color: $color-bullfrog;
+  }
+
+  & > .thumbs.-up > .icon {
+    @include mask-image(image_path('thumbs-up.svg'));
+  }
+
+  & > .thumbs.-down {
+    margin-left: 30px;
+  }
+
+  & > .thumbs.-down > .icon {
+    @include mask-image(image_path('thumbs-down.svg'));
+  }
+
+  & > .thumbs.-disabled > .icon {
+    background-color: $color-fade;
+  }
+
+  & > .thumbs.-disabled > .number {
+    color: $color-fade;
+  }
+}

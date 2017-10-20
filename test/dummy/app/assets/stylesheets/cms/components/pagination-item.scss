@@ -1,0 +1,114 @@
+$pagination-font-size: $font-size-small;
+
+.pagination-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-item {
+  position: relative;
+
+  display: inline-flex;
+
+  height: 30px;
+
+  border: 1px solid hsl(0, 0%, 93%);
+  border-radius: 3px;
+
+  @include small-only {
+
+    .-gap { display: none; }
+
+    .-first {
+      border-right: 1px solid hsl(0, 0%, 93%);
+    }
+
+    .-last {
+      border-left: 1px solid hsl(0, 0%, 93%);
+    }
+  }
+
+  a {
+    display: inline-block;
+
+    min-width: 38px;
+    height: 30px;
+
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+
+    color: $color-intense;
+
+    font-size: $pagination-font-size;
+    line-height: 34px;
+
+    &:hover {
+      color: #000;
+    }
+
+    &.-active {
+      cursor: default;
+
+      color: $color-system;
+      border-bottom: 2px solid $color-system;
+    }
+
+    &.-disabled {
+      cursor: default;
+
+      &:hover {
+        color: $color-intense;
+      }
+    }
+
+    &.icon {
+      width: 28px;
+      height: 100%;
+
+      background-color: #fff;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 7px 10px;
+
+
+      &.-prev, &.-next {
+        border-left: 1px solid hsl(0, 0%, 93%);
+      }
+
+      &.-prev {
+        transform: rotate(180deg);
+
+        background-image: url(image_path('icon_arrow.svg'));
+      }
+
+      &.-next {
+        background-image: url(image_path('icon_arrow.svg'));
+      }
+
+      &.-disabled {
+        background-image: url(image_path('icon_arrow_disabled.svg'));
+      }
+
+      &:hover {
+        background-color: $color-system;
+
+        &.-prev {
+          background-image: url(image_path('icon_arrow_hover.svg'));
+        }
+
+        &.-next {
+          background-image: url(image_path('icon_arrow_hover.svg'));
+        }
+
+        &.-disabled {
+          cursor: default;
+
+          background-color: #fff;
+          background-image: url(image_path('icon_arrow_disabled.svg'));
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,32 @@
+<% content_for :sub_navbar do %>
+  <div class="actions">
+    <%= link_to 'Create profile', '#', class: 'button -outline' %>
+  </div>
+<% end %>
+
+<div class="page-list">
+  <h1>Profiles</h1>
+
+  <div class="items">
+    <% @profiles.each do |profile| %>
+      <%= link_to profile, class: 'item -two-columns -admin' do %>
+        <div class="avatar">
+          <%= image_tag 'front/organization_example.jpg' %>
+        </div>
+        <div class="info">
+          <h2><%= profile.name %></h2>
+          <div class="date">
+            <%= l profile.created_at, format: :short %>
+          </div>
+          <div class="reading-time">
+            <%= profile.email %>
+          </div>
+        </div>
+        <div class="content">
+          <%= profile.description %>
+        </div>
+
+      <% end %>
+    <% end %>
+  </div>
+</div>

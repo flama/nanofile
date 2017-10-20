@@ -1,0 +1,42 @@
+$check-input-width: 22px;
+
+.check-input {
+  position: relative;
+
+  & > label {
+    padding-left: $check-input-width + 8px;
+
+    cursor: pointer;
+    text-align: left;
+    text-transform: capitalize;
+
+    color: $color-light;
+  }
+
+  & > input {
+    display: none;
+  }
+
+  & > input + label::before {
+    position: absolute;
+    left: 0;
+
+    width: $check-input-width;
+    height: $check-input-width;
+    margin-top: -$check-input-width/4;
+
+    content: '';
+
+    border: solid 1px $color-light;
+    background-color: #FFF;
+  }
+
+  & > input:checked + label::before {
+    content: '';
+
+    background-color: $color-system;
+    background-image: url(image_path('check.svg'));
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}

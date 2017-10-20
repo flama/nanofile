@@ -1,0 +1,39 @@
+.headline {
+  $size-title: 18;
+  $size-date: 11;
+
+  text-decoration: none;
+
+   > label {
+    @include responsive-prop(margin-top, 32, 32);
+    @include responsive-prop(font-size, $size-date, $size-date);
+  }
+
+   > .title {
+    @include responsive-prop(margin-top, 16, 16);
+
+     > span {
+      font-weight: $font-weight-bold;
+
+      transition: all 150ms ease-in-out;
+
+      color: #000;
+
+      @include responsive-prop(margin-top, 16, 16);
+      @include responsive-prop(padding-bottom, 3, 3);
+      @include responsive-prop(font-size, $size-title, $size-title);
+      @include responsive-prop(line-height, 26, 26);
+    }
+  }
+
+  &:hover {
+     > * {
+      cursor: pointer;
+    }
+
+     > .title > span {
+      color: $color-forest;
+      border-bottom: 1px dashed $color-forest;
+    }
+  }
+}

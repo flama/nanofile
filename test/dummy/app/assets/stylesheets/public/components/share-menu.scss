@@ -1,0 +1,138 @@
+.share-menu {
+  $size: 11;
+
+  font-weight: $font-weight-regular;
+
+  display: flex;
+  align-items: center;
+
+  color: $color-bullfrog;
+  background-color: $color-background-footer;
+
+  @include responsive-prop(margin-top, 11, 11);
+  @include responsive-prop(padding-top, 25, 25);
+  @include responsive-prop(padding-right, 30, 30);
+  @include responsive-prop(padding-bottom, 25, 25);
+  @include responsive-prop(padding-left, 30, 30);
+  @include medium-down {
+    flex-direction: column;
+  }
+
+   > .buttons {
+    display: flex;
+
+    @include medium-down {
+      @include responsive-prop(margin-top, 27, 27);
+    }
+  }
+
+   > .buttons .facebook,
+   > .buttons .twitter {
+    cursor: pointer;
+
+    border: 1px solid $color-bullfrog;
+    border-radius: 50%;
+
+    @include responsive-prop(margin-left, 16, 16);
+    @include medium-down {
+      margin: 0;
+    }
+  }
+
+   > .buttons .facebook:hover,
+   > .buttons .twitter:hover {
+    border: 1px solid $color-brand;
+
+    &::before {
+      background-color: $color-brand;
+    }
+  }
+
+   > .buttons .facebook:focus,
+   > .buttons .twitter:focus {
+    outline: none;
+  }
+
+   > .buttons .facebook::before,
+   > .buttons .twitter::before {
+    display: block;
+
+    content: '';
+
+    background-color: $color-bullfrog;
+
+    @include responsive-prop(width, 40, 40);
+    @include responsive-prop(height, 40, 40);
+  }
+
+   > .buttons .twitter {
+    @include medium-down {
+      @include responsive-prop(margin-left, 30, 30);
+    }
+  }
+
+   > .buttons .facebook::before {
+    @include mask-image(image_path('facebook.svg'));
+  }
+
+   > .buttons .twitter::before {
+    @include mask-image(image_path('twitter.svg'));
+  }
+
+  &.-side {
+    font-family: $font-family-open-sans;
+    font-weight: $font-weight-medium;
+
+    position: fixed;
+
+    flex-wrap: wrap;
+
+    margin-left: 0;
+    padding: 0;
+
+    text-transform: uppercase;
+
+    color: $color-light;
+    background-color: transparent;
+
+    @include responsive-prop(font-size, $size, $size);
+    @include responsive-prop(max-width, 100, 100);
+  }
+
+  &.-side > .buttons {
+    flex-direction: column;
+
+    @include responsive-prop(margin-top, 8, 8);
+  }
+
+  &.-side > .buttons .facebook,
+  &.-side > .buttons .twitter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid transparent;
+    background-color: transparent;
+
+    @include responsive-prop(width, 40, 40);
+    @include responsive-prop(height, 40, 40);
+    @include responsive-prop(margin-top, 8, 8);
+  }
+
+  &.-side > .buttons .facebook::before,
+  &.-side > .buttons .twitter::before {
+    display: block;
+
+    content: '';
+
+    background-color: $color-light;
+
+    @include responsive-prop(width, 40, 40);
+    @include responsive-prop(height, 40, 40);
+  }
+
+  &.-side > .buttons .facebook:hover,
+  &.-side > .buttons .twitter:hover {
+    border: 1px solid $color-brand;
+  }
+}

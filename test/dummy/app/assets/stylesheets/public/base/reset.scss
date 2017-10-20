@@ -1,0 +1,123 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+
+  vertical-align: baseline;
+
+  border: 0;
+
+  font-size: 100%;
+
+  /* Remove antialiasing */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+select, input, button, a {
+  border: none;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+h1, h2, h3 {
+  color: #000;
+}
+
+select, input, button, textarea {
+  width: 100%;
+  height: 44px;
+
+  font-family: $font-family-open-sans;
+  font-size: $font-size-base;
+
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.input {
+  > input,
+  > textarea {
+    border: 1px solid $color-light;
+
+    &.error {
+      border-color: $color-fire-heavy;
+    }
+  }
+
+  > textarea {
+    height: 200px;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    resize: none;
+  }
+}
+
+input:not([type='submit']),
+textarea {
+  width: calc(100% - 2rem);
+  padding-right: 1rem;
+  padding-left: 1rem;
+}
+
+
+label {
+  display: block;
+
+  letter-spacing: 1px;
+  text-transform: uppercase;
+
+  color: $color-strong;
+
+  font-size: $font-size-micro;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: underline;
+
+  color: $color-light;
+}

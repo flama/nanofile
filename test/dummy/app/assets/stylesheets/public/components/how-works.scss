@@ -1,0 +1,92 @@
+.how-works {
+  $size-title: 26;
+  $size-title-mobile: 18;
+  $size-text: 18;
+  $size-text-mobile: 16;
+
+  .title {
+    font-weight: $font-weight-bold;
+
+    color: $color-bullfrog;
+
+    @include responsive-prop(font-size, $size-title-mobile, $size-title);
+  }
+
+  & > .title {
+    font-family: $font-family-pt-serif;
+
+    letter-spacing: 1px;
+  }
+
+  p {
+    line-height: 1.6;
+
+    color: $color-strong;
+
+    @include responsive-prop(font-size, $size-text-mobile, $size-text);
+  }
+
+  & > p {
+    @include responsive-prop(margin-top, 16, 26);
+  }
+
+  & > .list > .item {
+    display: inline-flex;
+
+    @include responsive-prop(margin-top, 32, 46);
+  }
+
+  & > .list > .item > .icon {
+    background-repeat: no-repeat;
+    background-position: left 1vw;
+
+    @include responsive-prop(min-width, 80, 100);
+  }
+
+  & > .list > .item > .icon.-invite {
+    background-image: url(image_path('icon_letter.svg'));
+    background-size: 3.1vw 4.8vw;
+    background-position: 0.8vw 1vw;
+
+    @include medium-only {
+      background-size: 7vw 11vw;
+    }
+    @include small-only {
+      background-size: 12vw 18vw;
+    }
+  }
+
+  & > .list > .item > .icon.-community {
+    background-image: url(image_path('icon_victory.svg'));
+    background-size: 2.3vw 4.8vw;
+    background-position: 1.2vw 1.1vw;
+
+    @include medium-only {
+      background-size: 5.3vw 11vw;
+    }
+    @include small-only {
+      background-size: 8.8vw 18vw;
+    }
+  }
+
+  & > .list > .item > .icon.-reach {
+    background-image: url(image_path('icon_maps.svg'));
+    background-size: 3.4vw 5.2vw;
+    background-position: 0.7vw 1.2vw;
+
+    @include medium-only {
+      background-size: 7.8vw 12vw;
+    }
+    @include small-only {
+      background-size: 12vw 18vw;
+    }
+  }
+
+  & > .list > .item > .content > .title {
+    @include responsive-prop(font-size, $size-text-mobile, $size-text);
+  }
+
+  & > .list > .item > .content > p {
+    @include responsive-prop(margin-top, 5, 11);
+  }
+}

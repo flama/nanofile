@@ -1,0 +1,149 @@
+$sub-navbar-height: 60px;
+$sub-navbar-font-size: $font-size-micro;
+
+.sub-navbar {
+  @extend .nav-bar;
+
+  align-items: stretch;
+
+  height: $sub-navbar-height;
+
+  &.-fixed {
+    position: fixed;
+    z-index: z-index(top);
+    top: 0;
+
+    width: 100%;
+
+    background-color: rgba(#FFF, .9);
+  }
+
+  &.-fixed > .update-time {
+    top: 100%;
+  }
+
+  & > .update-time {
+    left: 50%;
+    top: 140px;
+    transform: translate(-50%, -50%);
+  }
+
+  & > .content {
+    grid-column: 2 / 5;
+  }
+
+  & > .content > .item {
+    font-size: $sub-navbar-font-size;
+    font-weight: $font-weight-medium;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    box-sizing: border-box;
+    margin-right: 0;
+    padding: 0 20px;
+
+    letter-spacing: 1px;
+
+    color: #000;
+  }
+
+  & > .content > .item.-active {
+    color: #000;
+    border-bottom: 3px solid $color-system;
+  }
+
+  & > .content > .item::before {
+    display: none;
+  }
+
+  & > .content > .item.-back {
+    justify-content: flex-start;
+    margin-left: -18px;
+  }
+
+  & > .content > .item.-back::before {
+    display: block;
+
+    width: 13px;
+    height: 8px;
+
+    content: '';
+    transform: rotate(180deg);
+
+    @include mask-image((image_path('arrow-right.svg')));
+  }
+
+  &:hover {
+    color: $color-system;
+  }
+
+  &:hover::before {
+    background-color: $color-system;
+  }
+
+  & > .actions {
+    display: inline-flex;
+    align-items: stretch;
+    justify-content: flex-end;
+
+    grid-column: 8 / 14;
+  }
+
+  & > .actions > .item {
+    font-size: $sub-navbar-font-size;
+    font-weight: $font-weight-medium;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-right: 33px;
+    padding: 0 20px;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    color: #000;
+  }
+
+  & > .actions > .item::before {
+    display: inline-block;
+
+    margin-right: 10px;
+
+    content: '';
+
+    background-color: #000;
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  & > .actions > .item:hover {
+    color: $color-system;
+
+    &::before {
+      background-color: $color-system;
+    }
+  }
+
+  & > .actions > .item.-delete::before {
+    width: 14px;
+    height: 16px;
+
+    @include mask-image(image_path('delete.svg'));
+  }
+
+  & > .actions > .item.-preview::before {
+    width: 19px;
+    height: 13px;
+
+    @include mask-image(image_path('preview.svg'));
+  }
+
+  & > .actions > .button {
+    margin: auto 0;
+    padding: 0 20px;
+  }
+}

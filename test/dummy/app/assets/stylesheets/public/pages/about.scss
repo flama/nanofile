@@ -1,0 +1,188 @@
+.page-about {
+  $size-title: 50;
+  $size-title-mobile: 22;
+  $size-subtitle: 24;
+  $size-subtitle-mobile: 18;
+  $size-text: 18;
+  $size-text-mobile: 16;
+
+  display: block;
+
+  width: 100%;
+  margin: 0 auto;
+
+  @include responsive-prop(padding-top, 44, 100);
+  @include responsive-prop(padding-bottom, 44, 100);
+
+  & > .subtitle,
+  & > .say-hello {
+    width: 82vw;
+    margin: 0 auto;
+
+    @include large-up {
+      width: 58vw;
+    }
+  }
+
+  & > .section-testimonials > .content {
+    width: 82vw;
+    margin: 0 auto;
+
+    @include large-up {
+      width: 85vw;
+    }
+  }
+
+  & > .section-testimonials > .title {
+    width: 72vw;
+    margin: 0 auto;
+
+    @include large-up {
+      width: 85vw;
+    }
+  }
+
+
+  & > .title {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-bold;
+
+    text-align: center;
+
+    @include responsive-prop(font-size, $size-title-mobile, $size-title);
+    @include responsive-prop(line-height, 28);
+  }
+
+  & > .subtitle {
+    text-align: center;
+
+    color: $color-strong;
+
+    @include responsive-prop(font-size, $size-subtitle-mobile, $size-subtitle);
+    @include responsive-prop(line-height, 28, 38);
+    @include responsive-prop(margin-top, 16, 24);
+  }
+
+  & > .full-image {
+    width: 100vw;
+
+    @include responsive-prop(margin-top, 40, 60);
+  }
+
+  & > .full-image > .image {
+    width: 100%;
+
+    @include responsive-prop(height, 206, 442);
+
+    object-fit: cover;
+  }
+
+  & > .how-works {
+    width: 52vw;
+    margin: 0 auto;
+
+    @include medium-down {
+      width: 82vw;
+    }
+  }
+
+  & > .section-contribute {
+    width: 82vw;
+    margin: 0 auto;
+
+    @include responsive-prop(margin-top, 40, 120);
+    @include large-up {
+      width: 58vw;
+    }
+  }
+
+  & > .how-works,
+  & > .section-testimonials {
+    @include responsive-prop(margin-top, 40, 60);
+  }
+
+  & > .say-hello {
+    width: 82vw;
+    margin: 0 auto;
+
+    @include responsive-prop(margin-top, 40, 130);
+    @include large-up {
+      width: 58vw;
+    }
+  }
+
+  & > .say-hello > .title {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-bold;
+
+    @include responsive-prop(font-size, 22, 50);
+    @include responsive-prop(line-height, 28, 67);
+  }
+
+  & > .say-hello > p {
+    color: $color-bullfrog;
+
+    @include responsive-prop(font-size, $size-text-mobile, $size-text);
+    @include responsive-prop(line-height, 27, 30);
+    @include responsive-prop(margin-top, 22, 24);
+  }
+
+  & > .say-hello > .footer {
+    @include medium-up {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+  & > .say-hello > h2 {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-bold;
+    line-height: 1.4;
+
+    @include responsive-prop(font-size, 22, 26);
+    @include responsive-prop(margin-top, 58, 60);
+  }
+
+  & > .say-hello > span {
+    font-weight: $font-weight-semi-bold;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    opacity: .5;
+
+    @include responsive-prop(font-size, 11, 11);
+    @include responsive-prop(margin-top, 11, 8);
+  }
+
+  & > .say-hello > .partners {
+    display: flex;
+    flex-direction: column;
+
+    @include responsive-prop(margin-top, 22, 38);
+    @include medium-up {
+      flex-direction: row;
+    }
+  }
+
+  & > .say-hello > .partners > .finep,
+  & > .say-hello > .partners > .fapemat {
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+
+  & > .say-hello > .partners > .finep {
+    background-image: url(image_path('finep.jpg'));
+
+    @include responsive-prop(width, 115, 115);
+    @include responsive-prop(height, 66, 66);
+    @include responsive-prop(margin-right, 0, 45);
+  }
+
+  & > .say-hello > .partners > .fapemat {
+    background-image: url(image_path('fapemat.jpg'));
+
+    @include responsive-prop(width, 238, 238);
+    @include responsive-prop(height, 63, 63);
+    @include responsive-prop(margin-top, 24);
+  }
+}

@@ -1,0 +1,51 @@
+.nav-burger {
+  position: relative;
+
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+
+
+  &::before,
+  &::after {
+    content: '';
+    width: 24px;
+    height: 2px;
+
+    background-color: currentColor;
+
+    display: block;
+    position: absolute;
+
+    transition: all .3s ease;
+  }
+
+  &::before {
+    top: 22px;
+    left: 12px;
+    box-shadow: 0 7px 0 0 currentColor;
+  }
+
+  &::after {
+    top: 15px;
+    left: 12px;
+  }
+
+  &.-open {
+    &::before,
+    &::after {
+      top: 22px;
+      left: 12px;
+      width: 24px;
+    }
+
+    &::before {
+      transform: rotate(45deg);
+      box-shadow: 0 0 0 0 transparent;
+    }
+
+    &::after {
+      transform: rotate(-45deg);
+    }
+  }
+}

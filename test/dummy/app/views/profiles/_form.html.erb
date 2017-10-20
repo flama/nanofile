@@ -1,0 +1,27 @@
+<%= form_with(model: profile, local: true) do |form| %>
+  <div class="uploader">
+    <label for="uploader-image">
+      <%= image_tag 'front/organization_example.jpg', class: 'image-container' -%>
+      <div class="overlay"></div>
+    </label>
+    <input id="uploader-image" type="file" accept="image/*" />
+  </div>
+
+  <div class="input">
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="input textarea">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="input">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <%= form.submit 'Save', class: 'button -large' %>
+  <%= link_to 'Cancel', profiles_path, class: 'cancel' %>
+<% end %>

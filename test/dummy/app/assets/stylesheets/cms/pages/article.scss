@@ -1,0 +1,191 @@
+.page-article {
+  $page-article-gap: 26px;
+  $size-header: 50;
+  $size-header-mobile: 32;
+  $size-title: 26;
+  $size-title-mobile: 18;
+  $size-subtitle: 14;
+  $size-subtitle-mobile: 12;
+  $size-status: 11;
+  $content-types: p, ul, h1, h2, h3, h4, h5, h6, figure;
+
+  display: block;
+
+  width: 100%;
+  margin: 0 auto;
+
+  @include responsive-prop(padding-bottom, 100, 100);
+
+  *:focus {
+    outline: none;
+  }
+
+  & > .status.-fixed {
+    position: absolute;
+    z-index: z-index(overlay);
+
+    color: #FFF;
+  }
+
+  .typewriter-editor > .hero {
+    @extend .hero-container;
+
+    width: 100vw;
+
+    @include responsive-prop(min-height, 300, 300);
+    @include responsive-prop(margin-top, 100, 100);
+  }
+
+  .typewriter-editor > .hero > .overlay {
+    @extend .-blue;
+  }
+
+  .typewriter-editor > .hero > .content {
+    z-index: z-index(overlay);
+  }
+
+  .typewriter-editor > .hero > .content > .status {
+    font-family: $font-family-roboto;
+    font-weight: $font-weight-medium;
+
+    width: 100%;
+    margin: 0 auto;
+
+    text-align: center;
+    text-transform: uppercase;
+    text-transform: uppercase;
+
+    color: $color-light;
+
+    @include responsive-prop(font-size, $size-status, $size-status);
+    @include responsive-prop(letter-spacing, 1, 1);
+  }
+
+  .typewriter-editor > .hero::before {
+    @include responsive-prop(left, 60, 60);
+    @include huge-up {
+      left: 200px;
+    }
+  }
+
+  .typewriter-editor > .hero::after {
+    @include responsive-prop(right, 60, 60);
+    @include huge-up {
+      right: 200px;
+    }
+  }
+
+  .typewriter-editor > .hero::before,
+  .typewriter-editor > .hero::after {
+    z-index: z-index(overlay);
+
+    height: 100%;
+
+    @include responsive-prop(margin-top, .5, .5);
+  }
+
+  .typewriter-editor > .hero.-with-image {
+    @extend .hero-container.-with-image;
+
+    position: relative;
+
+    margin-top: 0;
+
+    @include responsive-prop(height, 300, 670);
+  }
+
+  .typewriter-editor > .hero.-with-image > .overlay > img {
+    @include responsive-prop(height, 570, 570);
+  }
+
+  .typewriter-editor > .hero.-with-image:hover > .overlay::before {
+    background-color: rgba($color-blueberry, .5);
+  }
+
+  .typewriter-editor > .hero.-with-image::before,
+  .typewriter-editor > .hero.-with-image::after {
+    @include responsive-prop(top, 80, 80);
+    @include responsive-prop(height, 552, 552);
+  }
+
+  .typewriter-editor > .hero.-with-image > .content {
+    @include responsive-prop(padding-top, 30, 30);
+  }
+
+  .typewriter-editor > .hero.-with-image > .content > .info {
+    position: absolute;
+
+    @include responsive-prop(top, 80, 80);
+  }
+
+  .typewriter-editor > .hero.-with-image > .content > .status {
+    color: #FFF;
+  }
+
+  .typewriter-editor > .content {
+    @include responsive-prop(margin-top, 80, 80);
+  }
+
+  .typewriter-editor > .content ul {
+    list-style-position: inside;
+    list-style-type: disc;
+  }
+
+  .typewriter-editor > .content {
+    @each $content-type in $content-types {
+      #{$content-type} {
+        width: 60vw;
+        margin: 0 auto;
+
+        color: $color-bullfrog;
+
+        @include responsive-prop(margin-top, 24, 24);
+      }
+      #{$content-type}.-with-menu-open {
+        // 24 + 32
+        @include responsive-prop(margin-top, 56, 56);
+      }
+      #{$content-type}.-with-menu-open.-with-image {
+        // 56 + 90 + a breathing room of 4px
+        @include responsive-prop(margin-top, 180, 180);
+      }
+      #{$content-type}.-with-menu-open.-with-video {
+        // 56 + 85 + a breathing room of 4px
+        @include responsive-prop(margin-top, 145, 145);
+      }
+    }
+    .video-input,
+    .article-image {
+      width: 70vw;
+      margin: 0 auto;
+
+      @include responsive-prop(margin-top, 24, 24);
+    }
+  }
+
+  // TODO: review image positioning so we can style it properly
+  .typewriter-editor > .content > .article-image {
+    width: 70vw;
+    margin: 0 auto;
+
+    @include responsive-prop(margin-top, 40, 40);
+    @include small-only {
+      width: 82vw;
+
+      @include responsive-prop(margin-top, 40, 40);
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  .typewriter-editor > .content > .article-image .info {
+    @include responsive-prop(margin-left, 70, 70);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

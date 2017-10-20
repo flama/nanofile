@@ -1,0 +1,31 @@
+.video-input {
+  position: relative;
+  padding-bottom: 38%;
+  padding-top: 25px;
+  height: 0;
+
+  & > .embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  & > .input {
+    position: absolute;
+    height: 2em;
+    padding: 0 .5em;
+    top: 0;
+    left: 25%;
+    width: 50%;
+    box-shadow: rgba(#000, .3) 0 3px 12px;
+    border-radius: 4px;
+    background-color: white;
+    transition: all .15s ease-in-out;
+    opacity: 0;
+  }
+
+  & > .input.-visible {
+    top: -2.5em;
+    opacity: 1;
+  }
+}

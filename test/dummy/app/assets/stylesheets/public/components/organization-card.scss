@@ -1,0 +1,76 @@
+.organization-card {
+  $size-name: 26;
+  $size-name-mobile: 22;
+  $size-link: 11;
+  $size-articlesnum: 12;
+
+  display: flex;
+  flex-direction: row;
+
+  text-decoration: none;
+
+  & > .avatar {
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    border: 1px solid $color-fade;
+    border-radius: 50%;
+    background-image: cover;
+
+    @include responsive-prop(width, 48, 48);
+    @include responsive-prop(height, 48, 48);
+    @include responsive-prop(margin-right, 14, 14);
+  }
+
+  & > .info {
+    display: inline-flex;
+    align-items: flex-start;
+    flex-direction: column;
+    justify-content: center;
+
+    text-align: left;
+
+    @include responsive-prop(height, 52, 52);
+  }
+
+  & > .info > .articlesnum {
+    font-weight: $font-weight-semi-bold;
+
+    text-transform: uppercase;
+
+    color: #000;
+
+    @include responsive-prop(font-size, $size-articlesnum, $size-articlesnum);
+  }
+
+  & > .info > .name {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-bold;
+
+    @include responsive-prop(font-size, $size-name-mobile, $size-name);
+    @include responsive-prop(line-height, 28, $size-name);
+  }
+
+  & > .info > .link {
+    font-weight: $font-weight-regular;
+
+    color: $color-ice-gray;
+
+    @include responsive-prop(font-size, $size-link, $size-link);
+  }
+
+  & > .info > .articlesnum,
+  & > .info > .name,
+  & > .info > .link {
+    transition: color .25s ease-in-out;
+  }
+
+  &:hover > .info > .articlesnum,
+  &:hover > .info > .name,
+  &:hover > .info > .link {
+    transition: none;
+
+    color: $color-brand-dark;
+  }
+}

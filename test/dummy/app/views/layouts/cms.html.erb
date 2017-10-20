@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dummy</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag 'cms', media: 'all' %>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="google" value="notranslate">
+  </head>
+
+  <body>
+    <%= render 'layouts/cms/nav_bar'%>
+    <%= render 'layouts/cms/sub_navbar' %>
+
+    <div class="wrapper-container <%= yield :variant %>" data-fixable>
+      <%= render 'layouts/cms/notification' %>
+      <%= yield %>
+    </div>
+  </body>
+</html>

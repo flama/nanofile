@@ -1,0 +1,82 @@
+.page-alert {
+  $size-title: 50;
+  $size-title-mobile: 22;
+  $size-text: 18;
+
+  @extend .wrapper-container;
+
+  text-align: center;
+
+  @include responsive-prop(margin-bottom, 84, 137);
+  @include medium-up {
+    width: 50vw;
+  }
+
+  & > .animation-hand {
+    position: absolute;
+    top: 0;
+    left: 50%;
+
+    padding-top: 90px;
+
+    transform: translateX(-50%);
+
+    @include responsive-prop(margin-top, 24, 100);
+    @include responsive-prop(width, 308, 308);
+    @include responsive-prop(height, 300, 300);
+  }
+
+  & > .title {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-bold;
+
+    @include responsive-prop(font-size, $size-title-mobile, $size-title);
+    @include responsive-prop(margin-top, 370, 440);
+  }
+
+  & > .text {
+    color: $color-bullfrog;
+
+    @include responsive-prop(font-size, $size-text, $size-text);
+    @include responsive-prop(margin-top, 16, 26);
+    @include medium-up {
+      line-height: 1.67;
+    }
+  }
+
+  & > .text > a {
+    text-decoration: none;
+
+    color: $color-brand;
+  }
+
+  & > .simple-button {
+    display: none;
+
+    margin: 0 auto;
+
+    @include medium-up {
+      display: block;
+    }
+    @include responsive-prop(width, 0, 350);
+    @include responsive-prop(margin-top, 0, 40);
+  }
+
+  & > .cancel {
+    font-weight: $font-weight-bold;
+
+    display: block;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    color: #000;
+
+    @include responsive-prop(font-size, 12, 12);
+    @include responsive-prop(margin-top, 24, 24);
+  }
+
+  & > .cancel:hover {
+    color: lighten(#000, 33%);
+  }
+}

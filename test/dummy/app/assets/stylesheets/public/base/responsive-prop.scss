@@ -1,0 +1,20 @@
+@mixin responsive-prop($property, $mobile, $value: false) {
+
+  @include small-only {
+    #{$property}: #{$mobile / 3.75}vw;
+  }
+
+  @if ($value) {
+    @include medium-only {
+      #{$property}:  #{$value / 10.24}vw;
+    }
+
+    @include large-only {
+      #{$property}: #{$value / 14.4}vw;
+    }
+
+    @include huge-up {
+      #{$property}: #{$value / 19.2}vw;
+    }
+  }
+}

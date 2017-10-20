@@ -1,0 +1,22 @@
+<% content_for :variant, '-white' %>
+<div class="page-organization">
+  <section class="organization">
+    <h1>Profile</h1>
+    <div class="flex -between">
+      <div class="avatar">
+        <%= image_tag 'front/organization_example.jpg', class: 'image-container' %>
+      </div>
+
+      <%= link_to 'Edit', edit_profile_path(@profile), class: 'button -outline' %>
+    </div>
+
+    <label>Name</label>
+    <p><%= @profile.name %></p>
+
+    <label>Description</label>
+    <p><%= @profile.description %></p>
+
+    <label>Email</label>
+    <p><%= @profile.email %></p>
+  </section>
+</div>

@@ -1,0 +1,75 @@
+$page-modal-font-size-link: $font-size-micro;
+
+.page-modal {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100vw;
+  height: 100vh;
+
+  background-color: $color-background;
+
+  @include grid-cols(14);
+
+  > .content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    grid-column: 4 / 12;
+  }
+
+  > * {
+    text-align: center;
+  }
+
+  h1 {
+    font-weight: $font-weight-regular;
+  }
+
+  p {
+    margin-top: 24px;
+
+    font-family: $font-family-roboto;
+    line-height: 1.5em;
+
+    &.publish {
+      margin-top: 42px;
+    }
+  }
+
+  a {
+    margin-top: 16px;
+
+    text-transform: uppercase;
+
+    &:not(.button) {
+      margin-top: 24px;
+
+      letter-spacing: 1px;
+
+      font-size: $page-modal-font-size-link;
+      font-weight: $font-weight-medium;
+    }
+  }
+
+  .close-icon:before {
+    top: 72px;
+    right: 10vw;
+  }
+
+  .fade-text {
+    color: $color-light;
+
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    line-height: 24px;
+  }
+
+  .divisor {
+    width: 100%;
+    margin-top: 24px;
+  }
+}
