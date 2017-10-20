@@ -12,6 +12,7 @@ pkg/
 
 # personal files
 todo.txt
+todo.md
 
 # external dependencies
 node_modules/*
