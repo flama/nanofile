@@ -9,8 +9,17 @@ module SpawnerHelper
   end
 
   def uploader_for(name, attributes = {})
+    presign = Shrine.storages[:cache].presign(SecureRandom.hex)
+    uploadable = attributes[:uploadable]
+
     component_for "#{name}_upload",
-      image_url: attributes[:uploadable].url
+      image_url: uploadable.try(name).url,
+      image_cache: uploadable.try("cached_#{name}_data"),
+      field_name: "#{uploadable.class.model_name.singular}[#{name}]",
+      presign: {
+        url: presign.url,
+        fields: presign.fields
+      }
   end
 
   private

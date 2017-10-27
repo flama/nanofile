@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 export default class AvatarUpload extends Component {
   state = {
     imagePreviewUrl: this.props.imageUrl,
-    cached: true, // false
+    cached: false,
   }
 
   static defaultProps = {
@@ -11,37 +11,35 @@ export default class AvatarUpload extends Component {
   }
 
   componentWillMount() {
-    // this.presign = JSON.parse(this.props.presign)
-
     if (this.props.imageCache) {
       this.setState({ cached: true })
     }
   }
 
   componentDidMount() {
-    // this.createInputFile()
+    this.createInputFile()
   }
 
   // create an input for caching files in aws (isn't persistent)
-  // createInputFile = () => {
-  //   let fileInput = document.createElement('input')
-  //   fileInput.type = 'file'
-  //   fileInput.id = this.props.fieldName
-  //
-  //   fileInput.style.position = 'absolute'
-  //   fileInput.style.overflow = 'hidden'
-  //   fileInput.style.height = 0
-  //   fileInput.style.top = `${this.label.offsetTop}px`
-  //   fileInput.onchange = this.handleChange
-  //
-  //   document.body.appendChild(fileInput)
-  // }
+  createInputFile = () => {
+    let fileInput = document.createElement('input')
+    fileInput.type = 'file'
+    fileInput.id = this.props.fieldName
+
+    fileInput.style.position = 'absolute'
+    fileInput.style.overflow = 'hidden'
+    fileInput.style.height = 0
+    fileInput.style.top = `${this.label.offsetTop}px`
+    fileInput.onchange = this.handleChange
+
+    document.body.appendChild(fileInput)
+  }
 
   handleChange = (event) => {
     event.preventDefault()
     const file = event.target.files[0]
     this.preview(file)
-    // this.upload(file)
+    this.upload(file)
   }
 
   preview = (file) => {
@@ -61,7 +59,7 @@ export default class AvatarUpload extends Component {
   isValid = (file) => {
     this.errorMessages = []
 
-    if (!this.fileSizeUnder(file, 2000)) {
+    if (!this.fileSizeUnder(file, 20000)) {
       this.errorMessages.push('Até 2MB')
     }
 
@@ -85,34 +83,36 @@ export default class AvatarUpload extends Component {
   }
 
   upload = (file) => {
+
     if (!this.isValid(file)) {
       return this.notifyErrors()
     }
 
     let formData = new FormData()
 
-    Object.keys(this.presign.fields).forEach(key => {
-      formData.append(key, this.presign.fields[key])
+    Object.keys(this.props.presign.fields).forEach(key => {
+      formData.append(key, this.props.presign.fields[key])
     })
 
     formData.append('file', file)
 
-    fetch(this.presign.url, {
+    fetch(this.props.presign.url, {
       method: 'post',
       body: formData
     })
     .then(data => this.setState({ cached: true }))
+    .then(console.log)
+    .catch(console.error)
   }
 
   cachedFile = () => {
-    return this.state.file
-    // const { key } = this.presign.fields
-    //
-    // return JSON.stringify({
-    //   storage: 'cache',
-    //   id: key.replace(/cache\//, ''),
-    //   metadata: {},
-    // })
+    const { key } = this.props.presign.fields
+
+    return JSON.stringify({
+      storage: 'cache',
+      id: key.replace(/cache\//, ''),
+      metadata: {},
+    })
   }
 
   render() {
@@ -132,17 +132,7 @@ export default class AvatarUpload extends Component {
 
       {/* Creates the persistent file upload */}
       { this.state.cached &&
-        /* <input name={fieldName} type="hidden" value={this.cachedFile()} /> */
-        <input type="file"
-          id={fieldName}
-          name={fieldName}
-          onChange={this.handleChange}
-          style={{
-            position: 'absolute',
-            overflow: 'hidden',
-            height: 0,
-          }}
-        />
+        <input name={fieldName} type="hidden" value={this.cachedFile()} />
       }
     </div>)
   }
