@@ -9,7 +9,7 @@ module SpawnerHelper
   end
 
   def uploader_for(name, attributes = {})
-    presign = Shrine.storages[:cache].presign(SecureRandom.hex)
+    presign = Nanofile.presign
     uploadable = attributes[:uploadable]
 
     component_for "#{name}_upload",
