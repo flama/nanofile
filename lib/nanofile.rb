@@ -18,7 +18,9 @@ module Nanofile
   end
 
   def self.presign
-    @ready && Shrine.storages[:cache].presign(SecureRandom.hex)
+    return unless @ready
+
+    Shrine.storages[:cache].presign(SecureRandom.hex)
   end
 
   ActiveRecord::Base.send(:include, Nanofile::ImageUploadable)
