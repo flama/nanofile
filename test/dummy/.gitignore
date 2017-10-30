@@ -2,3 +2,7 @@ db/*.sqlite3
 db/*.sqlite3-journal
 log/*.log
 tmp/
+public/uploads/*
+/public/packs
+/public/packs-test
+/node_modules

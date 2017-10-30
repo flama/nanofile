@@ -5,7 +5,7 @@ services:
     command: bin/server
     ports:
       - 8090:3000 # puma
-      - 3075:3065 # webpacker
+      - 3075:3075 # webpacker
       - 1058:1048 # Byebug
     volumes:
       - .:/engine

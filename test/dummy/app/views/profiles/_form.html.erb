@@ -1,11 +1,20 @@
 <%= form_with(model: profile, local: true) do |form| %>
+
+  <%= uploader_for :avatar, uploadable: profile %>
+  <!-- <%= profile.avatar_url %>
   <div class="uploader">
     <label for="uploader-image">
-      <%= image_tag 'front/organization_example.jpg', class: 'image-container' -%>
+      <%= image_tag profile.avatar_url, class: 'image-container' -%>
       <div class="overlay"></div>
     </label>
     <input id="uploader-image" type="file" accept="image/*" />
-  </div>
+  </div> -->
+
+  <!-- <div class="input">
+    <%= form.label :avatar %>
+    <%= form.hidden_field :avatar, value: profile.cached_avatar_data %>
+    <%= form.file_field :avatar %>
+  </div> -->
 
   <div class="input">
     <%= form.label :name %>
