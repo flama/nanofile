@@ -1,3 +1,6 @@
 <div class="page-organization">
-  <%= component_for :upload_button %>
+  <%= component_for :upload_button,
+    promote_path: nanofile_promote_path,
+    presign_path: nanofile_presign_path
+  %>
 </div>

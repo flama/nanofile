@@ -21,3 +21,5 @@ gems/*
 
 # docker-sync
 .docker-sync
+
+.env
