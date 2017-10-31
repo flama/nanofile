@@ -17,8 +17,13 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 5.1.4"
+  s.add_dependency 'roda', '~> 2.29.0'
   s.add_dependency "shrine", "~> 2.8"
   s.add_dependency "aws-sdk-s3", "~> 1.5"
+
+  # Image processing
+  s.add_dependency 'image_processing', '~> 0.4.4'
+  s.add_dependency "mini_magick", '>= 4.3.5'
 
   s.add_development_dependency 'byebug', '~> 9.1'
   s.add_development_dependency "sqlite3"

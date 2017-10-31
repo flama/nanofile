@@ -1,13 +1,16 @@
-// import React, { Component } from 'react'
-// import PropTypes from 'prop-types'
-//
-// export default class UploadButton extends Component {
-//   static propTypes = {
-//
-//   }
-//
-//   render() {
-//     return (
-//     )
-//   }
-// }
+import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
+export default class UploadButton extends Component {
+  static propTypes = {
+
+  }
+
+  render() {
+    return (
+      <button onClick={}>
+        Upload time
+      </button>
+    )
+  }
+}
