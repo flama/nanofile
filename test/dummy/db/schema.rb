@@ -10,7 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171020180143) do
+ActiveRecord::Schema.define(version: 20171101133117) do
+
+  create_table "button_uploads", force: :cascade do |t|
+    t.text "image_data"
+  end
 
   create_table "profiles", force: :cascade do |t|
     t.string "name"
