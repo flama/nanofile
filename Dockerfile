@@ -6,6 +6,9 @@ RUN apt-get install -y apt-transport-https
 # for postgres
 RUN apt-get install -y -qq libpq-dev
 
+# for image processing
+RUN apt-get install -y advancecomp gifsicle jhead jpegoptim libjpeg-progs optipng pngcrush pngquant
+
 # for JavaScript runtime
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
 RUN apt-get update && apt-get install -y nodejs

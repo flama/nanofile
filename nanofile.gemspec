@@ -17,13 +17,22 @@ Gem::Specification.new do |s|
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
   s.add_dependency "rails", "~> 5.1.4"
-  s.add_dependency 'roda', '~> 2.29.0'
-  s.add_dependency "shrine", "~> 2.8"
-  s.add_dependency "aws-sdk-s3", "~> 1.5"
 
   # Image processing
   s.add_dependency 'image_processing', '~> 0.4.4'
   s.add_dependency "mini_magick", '>= 4.3.5'
+
+  # Image dimensions
+  s.add_dependency 'fastimage', '~> 2.1'
+
+  # Optimize image
+  s.add_dependency 'image_optim', '~> 0.25.0'
+  s.add_dependency 'image_optim_pack', '~> 0.5.0.20170831'
+
+  # Shrine
+  s.add_dependency 'roda', '~> 2.29.0'
+  s.add_dependency "aws-sdk-s3", "~> 1.5"
+  s.add_dependency "shrine", "~> 2.8"
 
   s.add_development_dependency 'byebug', '~> 9.1'
   s.add_development_dependency "sqlite3"

@@ -3,4 +3,12 @@
     promote_path: nanofile_promote_path,
     presign_path: nanofile_presign_path
   %>
+
+  <br><br><br>
+
+  <ul>
+    <% ButtonUpload.all.each do |upload| %>
+      <li><%= image_tag upload.src %></li>
+    <% end %>
+  </ul>
 </div>

@@ -40,7 +40,9 @@ export default class UploadButton extends Component {
 
     fetch(presignPath, {
       credentials: 'same-origin',
-      headers: this.headers,
+      headers: {
+        Accept: 'application/json',
+      },
     })
     .then(r => r.json())
     .then(presign => {
@@ -62,18 +64,17 @@ export default class UploadButton extends Component {
       })
     })
     .then(fileName => fetch(promotePath, {
-        method: 'post',
-        credentials: 'same-origin',
-        headers: this.headers,
-        body: JSON.stringify({
-          image: JSON.stringify({
-            "id": fileName,
-            "storage": "cache",
-            "metadata": {}
-          })
+      method: 'post',
+      credentials: 'same-origin',
+      headers: this.headers,
+      body: JSON.stringify({
+        image: JSON.stringify({
+          "id": fileName,
+          "storage": "cache",
+          "metadata": {}
         })
-      }))
-    .then(r => r.json())
+      })
+    }))
     .then(imageUpload => {
       this.setState({
         uploading: false,

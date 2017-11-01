@@ -1,8 +1,10 @@
 require "shrine"
 require "image_processing/mini_magick"
+require "image_optim"
 
 class Nanofile::ImageUploader < Shrine
   include ImageProcessing::MiniMagick
+
   plugin :determine_mime_type
   plugin :recache
   plugin :processing
@@ -41,14 +43,14 @@ class Nanofile::ImageUploader < Shrine
   private
 
   def optimize(image, quality: 50)
-    @compressor = ImageOptim.new({
+    @compressor = ImageOptim.new(
       jpegoptim: {
         allow_lossy: true,
         max_quality: quality
       },
       pngout: false,
       svgo: false,
-    })
+    )
 
     optimized = @compressor.optimize_image(image)
     as_minimagick(optimized)
