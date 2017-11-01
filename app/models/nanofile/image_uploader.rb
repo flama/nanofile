@@ -1,4 +1,3 @@
-require "shrine"
 require "image_processing/mini_magick"
 require "image_optim"
 

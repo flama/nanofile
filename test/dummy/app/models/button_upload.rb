@@ -1,5 +1,5 @@
 class ButtonUpload < ApplicationRecord
-  include Nanofile::ButtonUploader[:image]
+  include Nanofile::ImageUploader[:image]
 
   VIEW_WIDTH = 0.7 # this image will always be 70% of the screen width
 
