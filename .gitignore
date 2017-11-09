@@ -1,0 +1,29 @@
+.bundle/
+log/*.log
+pkg/
+
+# Ignore all logfiles and tempfiles.
+/yarn-error.log
+
+.byebug_history
+
+# OS files
+.DS_Store
+
+# personal files
+todo.txt
+todo.md
+
+# external dependencies
+node_modules/*
+yarn_modules/*
+gems/*
+
+# docker-sync
+.docker-sync
+
+.env
+test/dummy/.env
+
+Gemfile.lock
+.terraform

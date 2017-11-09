@@ -1,0 +1,13 @@
+<% if notice %>
+  <div class="success-notification">
+    <%= notice %>
+    <% link_to '', '#', class: 'close-icon' %>
+  </div>
+<% end %>
+
+<% if alert %>
+  <div class="error-notification">
+    <%= alert %>
+    <% link_to '', '#', class: 'close-icon' %>
+  </div>
+<% end %>

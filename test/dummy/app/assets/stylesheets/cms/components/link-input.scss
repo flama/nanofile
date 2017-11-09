@@ -1,0 +1,54 @@
+.link-input {
+  @extend .highlight-toolbar;
+
+  margin: 0;
+  padding: 0;
+
+  border-radius: 4px;
+  width: 216px;
+
+  & > .input {
+    width: 100%;
+    height: 40px;
+    padding: 0 8px;
+
+    color: $color-forest;
+    border-radius: 4px;
+  }
+
+  // removes the guy icon from the input
+  & > .input::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+  }
+
+  /* edition form, needs revision */
+  & > .input.-edit {
+    width: calc(100% - 4.5em);
+  }
+
+  & > .remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+
+    border-radius: 0 4px 0 0;
+    background-color: $color-fade;
+    background-image: url(image_path('close-notification.svg'));
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 25%;
+  }
+}

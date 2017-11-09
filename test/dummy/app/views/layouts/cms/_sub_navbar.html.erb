@@ -1,0 +1,10 @@
+<% if content_for? :sub_navbar %>
+  <nav
+    class="sub-navbar"
+    data-offset="80"
+    data-size="60"
+    data-final-size="50"
+  >
+    <%= yield :sub_navbar %>
+  </nav>
+<% end %>

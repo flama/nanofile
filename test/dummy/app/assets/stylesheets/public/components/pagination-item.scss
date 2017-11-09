@@ -1,0 +1,99 @@
+$pagination-font-size: $font-size-small;
+
+.pagination-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-item {
+  position: relative;
+
+  display: inline-flex;
+
+  @include responsive-prop(height, 34, 34);
+  @include small-only {
+    .-gap {
+      display: none;
+    }
+
+    .-first {
+      border-right: 1px solid hsl(0, 0%, 93%);
+    }
+
+    .-last {
+      border-left: 1px solid hsl(0, 0%, 93%);
+    }
+  }
+
+  & > a {
+    font-size: $pagination-font-size;
+    font-weight: $font-weight-semi-bold;
+
+    display: inline-block;
+
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+
+    color: $color-intense;
+
+    @include responsive-prop(width, 34, 34);
+    @include responsive-prop(height, 34, 34);
+    @include responsive-prop(line-height, 34, 34);
+  }
+
+  & > a:hover {
+    color: $color-brand;
+  }
+
+  & > a.-active {
+    cursor: default;
+
+    color: $color-brand;
+    border: 1px solid $color-brand;
+    border-radius: 50%;
+  }
+
+  & > a.-disabled svg {
+    cursor: default;
+
+    &:hover {
+      fill: $color-intense;
+    }
+  }
+
+  & > .icon,
+  & > .icon svg {
+    @include responsive-prop(width, 34, 34);
+    @include responsive-prop(height, 34, 34);
+  }
+
+  & > .icon svg {
+    fill: $color-intense;
+  }
+
+  & > .icon.-prev {
+    transform: rotate(180deg);
+
+    @include responsive-prop(margin-right, 16, 16);
+  }
+
+  & > .icon.-next {
+    @include responsive-prop(margin-left, 16, 16);
+  }
+
+  & > .icon.-disabled svg {
+    fill: $color-fade;
+  }
+
+  & > .icon:hover svg {
+    fill: $color-brand;
+  }
+
+  & > .icon.-disabled:hover svg {
+    cursor: default;
+
+    fill: $color-fade;
+  }
+}

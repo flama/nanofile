@@ -1,0 +1,27 @@
+.simple-button {
+  $size: 12;
+
+  font-family: $font-family-open-sans;
+  font-weight: $font-weight-bold;
+
+  display: block;
+
+  padding: 1.25em 0;
+
+  cursor: pointer;
+  transition: background-color .25s ease-in-out;
+  text-decoration: none;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: #FFF;
+  background-color: $color-brand;
+
+  @include responsive-prop(font-size, $size, $size);
+
+  &:hover {
+    transition: none;
+
+    background-color: $color-brand-dark;
+  }
+}

@@ -1,0 +1,73 @@
+$button-font-size: 12px;
+$button-font-size-outline: $font-size-micro;
+
+.button {
+  font-size: $button-font-size;
+  font-weight: $font-weight-bold;
+
+  box-sizing: border-box;
+  min-width: 173px;
+  height: 3rem;
+  padding: 0 30px;
+
+  cursor: pointer;
+  transition: all .25s ease-in-out;
+  letter-spacing: 2.18px;
+  text-transform: uppercase;
+
+  color: #FFF;
+  border: none;
+  background-color: $color-system;
+
+  &:hover {
+    transition: none;
+
+    background-color: $color-system-darker;
+  }
+
+  &.-large {
+    width: 228px;
+  }
+
+  &.-full {
+    width: 100%;
+  }
+
+  &.-outline {
+    font-size: $button-font-size-outline;
+    font-weight: $font-weight-medium;
+
+    min-width: 117px;
+    height: calc(2rem - 2.5px);
+    padding-top: 2.5px; // HACK: to compensate for caps centering :T
+
+    transition: all .25s ease-in-out;
+    letter-spacing: 1.1px;
+
+    color: $color-system;
+    border: 1px solid $color-system;
+    background-color: transparent;
+  }
+
+  &.-outline:hover {
+    transition: none;
+
+    color: #FFF;
+    background-color: $color-system;
+  }
+
+  &.-mail {
+    font-weight: $font-weight-regular;
+    line-height: 3.5rem;
+
+    text-align: center;
+  }
+}
+
+a.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+}

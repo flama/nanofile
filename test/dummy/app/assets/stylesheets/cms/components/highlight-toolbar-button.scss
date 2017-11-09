@@ -1,0 +1,54 @@
+.highlight-toolbar-button {
+  display: flex;
+  align-items: baseline;
+
+  width: 24px;
+
+  height: 40px;
+  margin: 0 4px;
+
+  cursor: pointer;
+
+  background-color: $color-light;
+
+  * {
+    transition: fill 250ms ease-in-out;
+  }
+
+  &:hover {
+    background-color: $color-fade;
+  }
+
+  &.-active {
+    background-color: $color-lavender-medium;
+  }
+
+  // svgs
+  &.-bold {
+    @include mask-image(image_path('highlight-toolbar/icon-bold.svg'));
+  }
+
+  &.-italic {
+    @include mask-image(image_path('highlight-toolbar/icon-italic.svg'));
+  }
+
+  &.-heading-two {
+    @include mask-image(image_path('highlight-toolbar/icon-t1.svg'));
+  }
+
+  &.-heading-three {
+    @include mask-image(image_path('highlight-toolbar/icon-t2.svg'));
+  }
+
+  &.-list-item {
+    @include mask-image(image_path('highlight-toolbar/icon-list.svg'));
+  }
+
+  &.-number-list {
+    @include mask-image(image_path('highlight-toolbar/icon-number-list.svg'));
+  }
+
+  &.-link {
+    @include mask-image(image_path('highlight-toolbar/icon-link.svg'));
+  }
+}

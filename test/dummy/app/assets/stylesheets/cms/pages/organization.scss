@@ -1,0 +1,164 @@
+$page-organization-font-size-subtitle: 24px;
+
+.page-organization {
+  margin-top: 72px;
+  // TODO: fix this margin so page doesn't overflow
+  margin-bottom: 100px;
+
+  grid-column: 4 / 12;
+
+  .divisor {
+    margin-top: 32px;
+  }
+
+  p {
+    margin-top: 10px;
+
+    font-weight: $font-weight-regular;
+    line-height: 32px;
+  }
+
+  h2 {
+    margin-top: 48px;
+
+    font-size: $page-organization-font-size-subtitle;
+    font-weight: $font-weight-medium;
+  }
+
+  .input {
+    margin-top: 36px;
+
+    label {
+      font-weight: $font-weight-medium;
+    }
+
+    > input,
+    > textarea {
+      margin-top: 8px;
+    }
+  }
+
+  .avatar, .uploader {
+    position: relative;
+
+    display: inline-block;
+
+    .image-container {
+      display: inline-block;
+
+      width: 80px;
+      height: 80px;
+
+      border-radius: 50%;
+      background-color: $color-fade;
+      border: 1px solid $color-fade;
+      box-sizing: border-box;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 80px;
+      height: 80px;
+
+      cursor: pointer;
+      transition: background .25s ease-in-out;
+
+      border-radius: 50%;
+      background-color: rgba(#000, .4);
+
+      &::before {
+        display: block;
+
+        width: 34px;
+        height: 44px;
+
+        content: '';
+
+        background-color: #FFF;
+
+        @include mask-image(image_path('uploader.svg'));
+      }
+
+      &:hover {
+        background-color: rgba(#000, .5);
+      }
+    }
+
+    input {
+      display: none;
+    }
+  }
+
+  .avatar {
+    margin-top: 40px;
+  }
+
+  .uploader {
+    margin-top: 36px;
+  }
+
+  .uploader .overlay {
+    opacity: 0;
+
+    // transition: opacity .25s ease-in-out;
+  }
+
+  .uploader:hover .overlay,
+  .uploader.-empty .overlay {
+    opacity: 1;
+    transition: none;
+  }
+
+  .uploader.-empty {
+    width: 80px;
+    height: 80px;
+  }
+
+  .button {
+    margin-top: 48px;
+
+    &.-submit {
+      width: 173px;
+    }
+  }
+
+  section.organization {
+    margin-bottom: 8px;
+
+    label {
+      margin-top: 40px;
+    }
+  }
+
+  section.account {
+    margin-top: 70px;
+
+    span {
+      margin-top: 33px;
+    }
+  }
+
+  .cancel {
+    margin-left: 40px;
+  }
+
+  .flex {
+    display: flex;
+    align-items: flex-start;
+
+    &.-between {
+      justify-content: space-between;
+    }
+
+    &.-center {
+      align-items: center;
+    }
+  }
+}

@@ -1,0 +1,83 @@
+.section-testimonials {
+  $size-title: 26;
+  $size-title-mobile: 22;
+  $size-text: 16;
+  $size-author: 14;
+  $color-lightsalmon: #FA8F65;
+
+  width: 100vw;
+
+  background-color: $color-lightsalmon;
+
+  @include responsive-prop(padding-top, 65, 60);
+  @include responsive-prop(padding-bottom, 65, 60);
+
+  & > .title {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-bold;
+
+    text-align: center;
+    letter-spacing: 1px;
+
+    color: #FFF;
+
+    @include responsive-prop(font-size, $size-title-mobile, $size-title);
+    @include responsive-prop(margin-top, 65, 45);
+  }
+
+  & > .content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+    height: 100%;
+
+    text-align: center;
+
+    color: #FFF;
+  }
+
+  & > .content > .testimonial {
+    flex: 1;
+
+    @include medium-down {
+      display: none;
+    }
+  }
+
+  & > .content > .testimonial:first-child {
+    @include medium-down {
+      display: block;
+
+      margin-right: 0;
+    }
+  }
+
+  & > .content > .testimonial:last-child {
+    margin-right: 0;
+  }
+
+  & > .content > .testimonial > .image {
+    @include responsive-prop(width, 92, 92);
+    @include responsive-prop(height, 92, 92);
+    @include responsive-prop(margin-top, 40, 50);
+  }
+
+  & > .content > .testimonial > .text {
+    font-style: italic;
+    line-height: 1.6;
+
+    width: 87%;
+    margin: 0 auto;
+
+    @include responsive-prop(font-size, $size-text, $size-text);
+    @include responsive-prop(margin-top, 16, 16);
+  }
+
+  & > .content > .testimonial > .author {
+    opacity: .7;
+
+    @include responsive-prop(margin-top, 16, 30);
+    @include responsive-prop(font-size, $size-author, $size-author);
+  }
+}

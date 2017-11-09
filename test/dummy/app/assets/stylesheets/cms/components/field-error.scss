@@ -1,0 +1,9 @@
+$field-error-font-size: $font-size-micro;
+
+.field-error {
+  font-size: $field-error-font-size;
+
+  margin-top: 6px;
+
+  color: $color-fire-heavy;
+}

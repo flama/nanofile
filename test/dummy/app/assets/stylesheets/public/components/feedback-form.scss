@@ -1,0 +1,48 @@
+.feedback-form {
+  $size: 11;
+
+  font-weight: $font-weight-regular;
+
+  display: block;
+  align-items: center;
+
+  color: $color-bullfrog;
+  background-color: $color-background-footer;
+
+  @include responsive-prop(margin-top, 11, 11);
+  @include responsive-prop(padding-top, 25, 25);
+  @include responsive-prop(padding-right, 30, 30);
+  @include responsive-prop(padding-left, 30, 30);
+  @include responsive-prop(padding-bottom, 25, 25);
+  @include medium-down {
+    flex-direction: column;
+  }
+
+  .input {
+    width: 100%;
+
+    @include responsive-prop(margin-top, 32, 32);
+  }
+
+  .input > * {
+    @include responsive-prop(margin-top, 8, 8);
+  }
+
+  .input > .label {
+    font-family: $font-family-open-sans;
+    font-weight: $font-weight-medium;
+
+    @include responsive-prop(margin-top, 24, 24);
+  }
+
+  .button {
+    @extend .simple-button;
+
+    @include responsive-prop(margin-top, 40, 40);
+    @include responsive-prop(width, 173, 173);
+  }
+
+  .button.-error {
+    @include responsive-prop(margin-top, (30 - $size), (30 - $size));
+  }
+}

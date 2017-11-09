@@ -1,0 +1,45 @@
+$success-notification-font-size: 12px;
+
+.success-notification {
+  font-size: $success-notification-font-size;
+  font-weight: $font-weight-medium;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 40px;
+  margin-top: 20px;
+  padding-left: 24px;
+
+  color: $color-lavender-heavy;
+  border: 1px solid $color-lavender-light;
+  border-radius: 3px;
+  background-color: $color-invisible;
+
+  grid-column: 2 / 14;
+
+  & > .close-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 40px;
+    height: 40px;
+  }
+
+  & > .close-icon:hover {
+    cursor: pointer;
+  }
+
+  & > .close-icon:before {
+    width: 8px;
+    height: 9px;
+
+    content: '';
+
+    background-image: url(image_path('close-notification.svg'));
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}

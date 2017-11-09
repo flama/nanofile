@@ -1,0 +1,53 @@
+.image-box {
+  display: none;
+
+  // maybe this won't be needed once we integrate the Editor here
+  &.show {
+    position: absolute;
+
+    display: block;
+
+    width: 100%;
+    height: 68px;
+    margin-top: 9px;
+    margin-left: 51px;
+    padding: 11px;
+
+    transition: all .3s ease-in-out;
+
+    border: 1px dashed $color-lavender-medium;
+    border-radius: 3px;
+  }
+
+  .image-box-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 100%;
+    height: 100%;
+
+    background-color: $color-invisible;
+
+    label {
+      display: inline-block;
+
+      padding-left: .5em;
+
+      cursor: pointer;
+      letter-spacing: inherit;
+      text-transform: none;
+
+      font-size: inherit;
+    }
+
+    .-blue {
+      color: $color-system;
+    }
+
+  }
+
+  input#image-upload {
+    display: none;
+  }
+}

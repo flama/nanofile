@@ -1,0 +1,52 @@
+.summary {
+  $size-title: 18;
+  $size-text: 17;
+  $size-link: 12;
+  $size-more: 16;
+
+  @include responsive-prop(margin-top, 80, 80);
+
+  & > h2 {
+    @include responsive-prop(font-size, $size-title, $size-title);
+  }
+
+  & > p {
+    @include responsive-prop(margin-top, 18, 18);
+    @include responsive-prop(font-size, $size-text, $size-text);
+    @include responsive-prop(line-height, 24, 24);
+  }
+
+  & > label.subtitle {
+    font-family: $font-family-open-sans;
+    font-style: normal;
+
+    @include responsive-prop(font-size, $size-link, $size-link);
+  }
+
+  & > a {
+    font-weight: bold;
+
+    display: block;
+
+    text-decoration: none;
+
+    color: #000;
+
+    @include responsive-prop(margin-top, 24, 24);
+    @include responsive-prop(font-size, $size-more, $size-more);
+  }
+
+  & > a:after {
+    display: inline-block;
+
+    content: '';
+
+    background-image: url(image_path('arrow-right.svg'));
+    background-repeat: no-repeat;
+    background-size: 100%;
+
+    @include responsive-prop(width, 13, 13);
+    @include responsive-prop(height, 9, 9);
+    @include responsive-prop(margin-left, 8, 8);
+  }
+}

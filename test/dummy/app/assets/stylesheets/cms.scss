@@ -1,0 +1,17 @@
+@import "cms/ambience/*";
+@import "cms/base/*";
+
+@import "public/components/hero-container";
+@import "public/ambience/positions";
+@import "public/base/mask-image";
+@import "public/base/aspect-ratio";
+
+@import "cms/components/*";
+@import "cms/pages/*";
+
+// front dev, remember to remove before production
+@import "cms/pages/index";
+
+body {
+  background-color: $color-background;
+}

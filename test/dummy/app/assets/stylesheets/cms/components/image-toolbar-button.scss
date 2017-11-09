@@ -1,0 +1,92 @@
+.image-toolbar-button {
+  $size: $font-size-micro;
+
+  font-size: $size;
+  font-weight: $font-weight-medium;
+
+  display: flex;
+  align-items: center;
+
+  height: 40px;
+  padding: 0 8px;
+
+  cursor: pointer;
+  text-transform: uppercase;
+
+  color: $color-light;
+
+  * {
+    transition: fill 250ms ease-in-out;
+  }
+
+  &:hover {
+    color: $color-fade;
+  }
+
+  &:hover::before {
+    background-color: $color-fade;
+  }
+
+  &:nth-child(2) {
+    padding-left: 16px;
+  }
+
+  &:last-child {
+    padding-right: 16px;
+  }
+
+  &::before {
+    display: inline-block;
+
+    width: 14px;
+    height: 24px;
+    margin-right: 10px;
+
+    content: '';
+
+    background-color: $color-light;
+  }
+
+  &.-active {
+    color: $color-lavender-medium;
+
+    &::before {
+      background-color: $color-lavender-medium;
+    }
+  }
+
+  // svgs
+  &.-image::before {
+    width: 17px;
+    padding: 0 4px;
+
+    @include mask-image(image_path('highlight-toolbar/icon-image.svg'));
+  }
+
+  &.-image::after {
+    position: absolute;
+    left: 56px;
+
+    display: inline-block;
+
+    width: 1px;
+    height: 100%;
+
+    content: '';
+
+    opacity: .3;
+    background-color: $color-light;
+  }
+
+  &.-add::before {
+    @include mask-image(image_path('highlight-toolbar/icon-add.svg'));
+  }
+
+  &.-edit::before {
+    @include mask-image(image_path('highlight-toolbar/icon-edit.svg'));
+  }
+
+  &.-remove::before {
+    @include mask-image(image_path('highlight-toolbar/icon-remove.svg'));
+  }
+}

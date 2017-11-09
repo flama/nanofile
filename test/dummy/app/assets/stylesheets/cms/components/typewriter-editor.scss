@@ -1,0 +1,68 @@
+.typewriter-editor {
+  $size-heading-one: 50px;
+  $size-heading-two: 38px;
+  $size-heading-three: 26px;
+
+  a {
+    color: $color-brand;
+  }
+
+  span.highlight {
+    background-color: $color-lavender-light;
+  }
+
+  span.code {
+    font-family: monospace;
+
+    padding: 3px .25em;
+
+    border: 1px solid $color-intense;
+    border-radius: .25em;
+    background-color: $color-background;
+  }
+
+  ul {
+    list-style: initial;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: $font-family-pt-serif;
+  }
+
+  h1,
+  h1 > a {
+    font-size: $size-heading-one;
+    line-height: 67px;
+  }
+
+  h2.subtitle,
+  h2.subtitle > a {
+    font-family: $font-family-pt-serif;
+    font-size: 26px;
+    font-weight: $font-weight-bold;
+    line-height: 37px;
+  }
+
+  h2,
+  h2 > a {
+    font-size: $size-heading-two;
+    line-height: 46px;
+  }
+
+  h3,
+  h4,
+  h5,
+  h6,
+  h3 > a,
+  h4 > a,
+  h5 > a,
+  h6 > a {
+    font-size: $size-heading-three;
+    line-height: 35px;
+  }
+}

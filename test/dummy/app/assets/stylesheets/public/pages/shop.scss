@@ -1,0 +1,54 @@
+.page-shop {
+  $size-title: 50;
+  $size-title-mobile: 22;
+  $size-subtitle: 24;
+  $size-subtitle-mobile: 18;
+
+  display: block;
+
+  width: 100%;
+  margin: 0 auto;
+
+  @include responsive-prop(margin-top, 44, 100);
+
+  & > .title,
+  & > .subtitle {
+    @include responsive-prop(width, 309, 817);
+    margin: 0 auto;
+  }
+
+  & > .title {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-bold;
+
+    text-align: center;
+
+    @include responsive-prop(font-size, $size-title-mobile, $size-title);
+    @include responsive-prop(line-height, 28);
+  }
+
+  & > .subtitle {
+    text-align: center;
+
+    color: $color-strong;
+
+    @include responsive-prop(font-size, $size-subtitle-mobile, $size-subtitle);
+    @include responsive-prop(line-height, 28, 38);
+    @include responsive-prop(margin-top, 16, 24);
+  }
+
+  & > .full-image {
+    width: 100vw;
+
+    @include responsive-prop(height, 206, 442);
+    @include responsive-prop(margin-top, 48, 80);
+  }
+
+  & > .full-image > .image {
+    width: 100%;
+
+    @include responsive-prop(height, 206, 442);
+
+    object-fit: cover;
+  }
+}

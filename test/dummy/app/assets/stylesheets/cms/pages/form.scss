@@ -1,0 +1,63 @@
+.page-form {
+  margin-top: 72px;
+
+  grid-column: 5 / 11;
+
+  @include medium-down {
+    grid-column: 2 / 14;
+
+    .button {
+      width: 100%;
+    }
+
+    a {
+      width: 100%;
+
+      text-align: center;
+    }
+  }
+
+  h1 {
+    font-weight: $font-weight-regular;
+  }
+
+  p {
+    margin-top: 16px;
+
+    font-size: $font-size-base;
+    line-height: 2em;
+  }
+
+  .input {
+    margin-top: 32px;
+
+    label {
+      margin-top: 24px;
+      margin-bottom: 8px;
+
+      font-weight: $font-weight-medium;
+    }
+
+    &.error > input {
+      border: 1px solid $color-fire-heavy;
+    }
+  }
+
+  .button {
+    margin-top: 24px;
+  }
+
+  a {
+    display: block;
+
+    margin-top: 24px;
+
+    font-size: $font-size-small;
+
+    &.cancel {
+      display: inline-block;
+
+      margin-left: 40px;
+    }
+  }
+}

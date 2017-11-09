@@ -1,0 +1,22 @@
+.close-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+
+  &::before {
+    position: absolute;
+
+    width: 2rem;
+    height: 2rem;
+
+    content: '';
+    cursor: pointer;
+
+    background-image: url(image_path('close.svg'));
+    background-repeat: no-repeat;
+    background-size: 100%;
+  }
+}
