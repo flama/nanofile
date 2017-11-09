@@ -1,0 +1,83 @@
+.section-contribute {
+  $size-title: 26;
+  $size-title-mobile: 18;
+  $size-text: 18;
+  $size-text-mobile: 16;
+
+  @extend .hero-container;
+
+  @include responsive-prop(min-height, 0, 350);
+  @include small-only {
+    min-height: 140vw;
+  }
+
+  &::before,
+  &::after {
+    z-index: z-index(overlay);
+    top: 2px;
+
+    width: 2.3vw;
+    height: 91.5%;
+    margin-top: .5px;
+
+    border-top-width: 1.7vw;
+    border-bottom-width: 1.7vw;
+
+    @include small-only {
+      display: none;
+    }
+  }
+
+  &::before {
+    left: -3.7vw;
+
+    @include large-up {
+      border-left-width: 1.8vw;
+    }
+  }
+
+  &::after {
+    right: -3.7vw;
+
+    @include large-up {
+      border-right-width: 1.8vw;
+    }
+  }
+
+  & > .content {
+    z-index: z-index(overlay);
+
+    width: 89%;
+    margin: 0 auto;
+
+    text-align: left;
+
+    @include responsive-prop(padding-top, 18, 18);
+
+    @include medium-down {
+      overflow: inherit;
+    }
+  }
+
+  & > .content > .title {
+    font-weight: $font-weight-bold;
+
+    width: 100%;
+    line-height: 2;
+
+    letter-spacing: 1px;
+
+    color: $color-bullfrog;
+
+    @include responsive-prop(font-size, $size-title-mobile, $size-title);
+  }
+
+  & > .content > p {
+    line-height: 1.7;
+
+    color: $color-bullfrog;
+
+    @include responsive-prop(font-size, $size-text-mobile, $size-text);
+    @include responsive-prop(margin-top, 15, 15);
+  }
+}

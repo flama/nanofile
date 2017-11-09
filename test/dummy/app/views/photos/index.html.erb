@@ -1,0 +1,17 @@
+<% content_for :sub_navbar do %>
+  <div class="actions">
+    <%= link_to 'Add Photo', new_photo_path, class: 'button -outline' %>
+  </div>
+<% end %>
+
+<div class="page-list">
+  <h1>Gallery</h1>
+
+  <div class="items">
+    <div class="photo-gallery">
+      <% @photos.each do |photo| %>
+        <%= image_tag photo.image_src, srcset: photo.image_srcset, class: 'photo' %>
+      <% end %>
+    </div>
+  </div>
+</div>

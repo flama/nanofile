@@ -1,0 +1,8 @@
+version: "2"
+syncs:
+  nanofile-engine-sync:
+    src: '.'
+  nanofile-gems-sync:
+    src: './gems'
+  nanofile-yarn_modules-sync:
+    src: './yarn_modules'

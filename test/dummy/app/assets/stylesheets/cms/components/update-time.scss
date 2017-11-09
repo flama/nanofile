@@ -1,0 +1,53 @@
+.update-time {
+  $size-text: $font-size-micro;
+  $color-text: rgba(#000, .6);
+
+  font-family: $font-family-roboto;
+  font-size: $size-text;
+
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 30px;
+  padding-right: 8px;
+  padding-left: 8px;
+
+  color: $color-text;
+  border: 1px solid $color-lavender-light;
+  border-radius: 26px;
+  background-color: #FFF;
+  box-shadow: 0 0 12px 0 rgba(0,0,0,.14);
+
+  & > .icon {
+    width: 18px;
+    height: 16px;
+    margin-right: 8px;
+    margin-left: 4px;
+
+    background-color: $color-text;
+
+    @include mask-image(image_path('icon_clock.svg'));
+  }
+
+  & > .icon.-wand {
+    height: 18px;
+    @include mask-image(image_path('icon_wand.svg'));
+  }
+
+  & > p {
+    margin-right: 4px;
+    margin-bottom: 1px;
+
+    letter-spacing: .3px;
+  }
+
+  &.-fixed {
+    position: fixed;
+    z-index: z-index(top);
+    right: 60px;
+    bottom: 30px;
+  }
+}

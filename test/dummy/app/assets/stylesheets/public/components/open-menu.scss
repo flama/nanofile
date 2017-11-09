@@ -1,0 +1,62 @@
+body.-open-menu {
+  .open-menu {
+    display: block;
+
+    transition: transform .25s ease-in-out;
+    transform: translateX(0);
+  }
+
+  .nav-bar {
+    transform: translateX(0);
+  }
+
+  .nav-bar > .menu > .link.-growfeed,
+  .nav-bar > .menu > .nav-burger {
+    z-index: z-index(top);
+  }
+
+  .nav-bar > .menu > .link.-growfeed > .brand {
+    background-color: #FFF;
+  }
+
+  .nav-bar > .menu > .nav-burger {
+    color: #FFF;
+  }
+}
+
+.open-menu {
+  $size: 20;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  display: none;
+
+  width: 100vw;
+  height: 100vh;
+
+  transform: translateX(100%);
+
+  background-color: $color-brand;
+
+  & > .content {
+    @extend .wrapper-container;
+
+    @include responsive-prop(margin-top, 120, 120);
+  }
+
+  & > .content > a {
+    font-weight: $font-weight-semi-bold;
+
+    display: block;
+
+    text-decoration: none;
+    letter-spacing: 2px;
+
+    color: #FFF;
+
+    @include responsive-prop(font-size, $size, $size);
+    @include responsive-prop(margin-top, 32, 32);
+  }
+}

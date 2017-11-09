@@ -1,0 +1,88 @@
+.zoom-menu {
+  position: absolute;
+  z-index: z-index(overlay);
+  bottom: 28px;
+  left: 34px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-around;
+
+  width: 190px;
+  height: 28px;
+
+  cursor: default;
+
+  border-radius: 56px;
+  background-color: $color-night;
+  box-shadow: 0 3px 12px 0 rgba(0,0,0,.3);
+
+  & > .bar {
+    width: 60%;
+    height: 1px;
+
+    border-bottom: 1px solid #434343;
+    border-radius: .5px;
+    background-color: #000;
+  }
+
+  & .control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 24px;
+    height: 100%;
+
+    cursor: pointer;
+  }
+
+  & .control::before,
+  & .control.-zoom::before,
+  & .control.-higher::after {
+    background-color: $color-light;
+  }
+
+  & .control:hover::before,
+  & .control:hover.-zoom::before,
+  & .control:hover.-higher::after {
+    background-color: $color-fade;
+  }
+
+  & .control.-lower::before,
+  & .control.-higher::before,
+  & .control.-higher::after {
+    display: block;
+
+    width: 9px;
+    height: 1px;
+
+    content: '';
+
+    border-radius: .5px;
+  }
+
+  & .control.-higher::after {
+    position: absolute;
+
+    transform: rotate(90deg);
+  }
+
+  & .control.-zoom {
+    width: 11px;
+    margin-left: -1px;
+  }
+
+  & .control.-zoom::before {
+    display: block;
+
+    width: 11px;
+    height: 11px;
+    margin-top: 1px;
+
+    content: '';
+
+    border-radius: 50%;
+    box-shadow: 0 2px 4px 0 rgba(0,0,0,.5);
+  }
+}

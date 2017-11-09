@@ -1,0 +1,79 @@
+.page-mail {
+  max-width: 580px;
+
+  & > * {
+    text-align: center;
+  }
+
+  & > .brand {
+    width: 80px;
+    height: 44px;
+    margin: 0 auto;
+    margin-top: 50px;
+
+    background-image: url(image_path('brand.svg'));
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  & > .title {
+    font-family: 'Times New Roman', Georgia, Serif;
+    font-size: 36px;
+    font-weight: $font-weight-bold;
+    line-height: 41px;
+
+    margin-top: 90px;
+  }
+
+  & > .subtitle {
+    line-height: 28px;
+
+    margin-top: 18px;
+  }
+
+  & > .center {
+    width: 228px;
+    margin: 0 auto;
+    margin-top: 32px;
+  }
+
+  & > .center > .button {
+    line-height: 48px;
+
+    display: block;
+
+    width: 228px;
+    height: 48px;
+
+    text-align: center;
+  }
+
+  & > .divisor {
+    margin-top: 24px;
+  }
+
+  & > .fade-text {
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    line-height: 24px;
+
+    color: $color-light;
+  }
+
+  & > .box {
+    line-height: 28px;
+
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 32px;
+
+    text-align: left;
+
+    color: $color-strong;
+    background-color: $color-invisible;
+  }
+
+  & > .box > .email {
+    font-weight: $font-weight-bold;
+  }
+}

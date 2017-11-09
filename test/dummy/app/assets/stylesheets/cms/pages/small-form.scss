@@ -1,0 +1,41 @@
+.page-small-form {
+  margin-top: 72px;
+
+  grid-column: 6 / 10;
+  
+  @include medium-down {
+    grid-column: 2 / 14;
+  }
+
+  label {
+    margin-top: 24px;
+    margin-bottom: 8px;
+  }
+
+  .check-input > label {
+    margin-top: $check-input-width;
+    margin-bottom: 2rem;
+  }
+
+  .left, .right {
+    float: left;
+
+    width: 50%;
+
+    label, a {
+      font-size: $font-size-small;
+    }
+  }
+
+  .left {
+    text-align: left;
+  }
+
+  .right {
+    text-align: right;
+
+    a {
+      line-height: 64px;
+    }
+  }
+}

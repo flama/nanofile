@@ -1,0 +1,327 @@
+.page-article {
+  $gap: 26;
+  $size-header: 50;
+  $size-header-mobile: 32;
+  $size-title: 26;
+  $size-title-mobile: 18;
+  $size-text: 16;
+  $size-subtitle: 14;
+  $size-subtitle-mobile: 12;
+  $size-author: 11;
+
+  display: block;
+
+  width: 100%;
+  margin: 0 auto;
+
+  @include responsive-prop(padding-bottom, 100, 100);
+
+  & > .hero-container {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-bold;
+
+    width: 100vw;
+
+    @include responsive-prop(font-size, $size-header-mobile, $size-header);
+    @include responsive-prop(min-height, 300, 300);
+  }
+
+  .hero-container > .overlay {
+    @extend .-blue;
+  }
+
+  & > .hero-container > .content {
+    z-index: z-index(overlay);
+  }
+
+  & > .hero-container::before {
+    @include responsive-prop(left, 30, 60);
+    @include huge-up {
+      left: 200px;
+    }
+  }
+
+  & > .hero-container::after {
+    @include responsive-prop(right, 30, 60);
+    @include huge-up {
+      right: 200px;
+    }
+  }
+
+  & > .hero-container::before,
+  & > .hero-container::after {
+    z-index: z-index(overlay);
+
+    height: 100%;
+
+    @include small-only {
+      display: none;
+    }
+  }
+
+  & > .hero-container.-with-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    margin-top: 0;
+
+    @include responsive-prop(height, 400, 670);
+  }
+
+  & > .hero-container.-with-image:hover > .overlay.-blue::before {
+    background-color: rgba($color-blueberry, .5);
+  }
+
+  & > .hero-container.-with-image::before,
+  & > .hero-container.-with-image::after {
+    @include responsive-prop(top, 80, 80);
+    @include responsive-prop(height, 552, 552);
+  }
+
+  & > .hero-container.-with-image > .content > .info {
+    @include responsive-prop(margin-top, 20, 80);
+  }
+
+  & > .content {
+    @include responsive-prop(margin-top, 40, 80);
+  }
+
+  & > .content.-fixed {
+    @include responsive-prop(margin-top, 360, 640);
+  }
+
+  & > .content > * {
+    margin: 0 auto;
+
+    color: $color-bullfrog;
+
+    @include responsive-prop(width, 310, 745);
+    @include responsive-prop(line-height, 27, 30);
+    @include responsive-prop(margin-top, 24, 24);
+  }
+
+  & > .content > .text {
+    @include responsive-prop(font-size, $size-text, $size-text);
+  }
+
+  & > .content > .subtitle {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-bold;
+
+    color: $color-bullfrog;
+
+    @include responsive-prop(font-size, $size-title-mobile, $size-title);
+    @include responsive-prop(line-height, 26, 35);
+  }
+
+  & > .content > .article-image {
+    width: 70vw;
+    margin: 0 auto;
+
+    @include responsive-prop(margin-top, 40, 40);
+    @include responsive-prop(margin-bottom, 40, 40);
+    @include small-only {
+      width: 82vw;
+
+      @include responsive-prop(margin-top, 40, 40);
+      @include responsive-prop(margin-bottom, 40, 40);
+
+      &::before {
+        display: none;
+      }
+    }
+  }
+
+  & > .content > .video {
+    position: relative;
+
+    width: 70vw;
+    height: 0;
+    padding-top: 24px;
+    padding-bottom: 38%;
+  }
+
+  & > .content > .video > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  & > .content a {
+    @extend .dotted-link;
+
+    color: $color-forest;
+  }
+
+  & > .content ul {
+    list-style-position: inside;
+    list-style-type: disc;
+  }
+
+  & > .content > .sideshare {
+    @extend .share-menu;
+    @extend .share-menu.-side;
+
+    z-index: z-index(top);
+
+    @include responsive-prop(margin-left, 60, 60);
+    @include medium-down {
+      display: none;
+    }
+  }
+
+  & > .author {
+    @extend .organization-card;
+
+    margin: 0 auto;
+
+    @include responsive-prop(width, 312, 745);
+    @include responsive-prop(margin-top, 30, 45);
+  }
+
+  & > .author > .avatar {
+    @include responsive-prop(margin-top, 3, 3);
+  }
+
+  & > .author > .info {
+    color: #000;
+  }
+
+  & > .author > .info > .role {
+    font-weight: $font-weight-semi-bold;
+
+    letter-spacing: 0;
+    text-transform: uppercase;
+
+    @include responsive-prop(font-size, 11, 12);
+  }
+
+  & > .author > .info > .name {
+    @include responsive-prop(font-size, 22, 26);
+    @include responsive-prop(line-height, 28, 33);
+    @include responsive-prop(margin-top, 1, 1);
+  }
+
+  & > .feedback {
+    font-weight: $font-weight-semi-bold;
+
+    margin: 0 auto;
+
+    @include responsive-prop(width, 312, 745);
+    @include responsive-prop(margin-top, 22, 30);
+  }
+
+  & > .feedback .thumbs {
+    display: inline-block;
+
+    @include responsive-prop(margin-left, -13, -13);
+  }
+
+  & > .feedback .thumbs > * {
+    display: inline-block;
+
+    cursor: pointer;
+
+    @include responsive-prop(width, 18, 18);
+    @include responsive-prop(height, 18, 18);
+    @include responsive-prop(margin-left, 16, 16);
+  }
+
+  & > .feedback .thumbs > .up svg {
+    @include responsive-prop(margin-top, 7, 7);
+  }
+
+  & > .feedback .thumbs > .up.active .thumb {
+    stroke: $color-forest;
+  }
+
+  & > .feedback .thumbs > .down svg {
+    @include responsive-prop(margin-bottom, -5, -5);
+  }
+
+  & > .feedback .thumbs > .down.active .thumb {
+    stroke: $color-fire-heavy;
+  }
+
+  & > .feedback .share {
+    @extend .share-menu;
+  }
+
+  & > .feedback .share.-dislike {
+    @extend .feedback-form;
+  }
+
+  & > .divisor {
+    @include responsive-prop(margin-top, 80, 80);
+    @include medium-down {
+      display: none;
+    }
+  }
+
+  & > .mail-bar {
+    @include responsive-prop(margin-top, 74, 100);
+  }
+
+  & > .headlines {
+    @extend .articles-card;
+
+    width: 85vw;
+    margin: 0 auto;
+
+    @include responsive-prop(margin-top, 70, 70);
+  }
+
+  & > .keepreading {
+    font-weight: $font-weight-semi-bold;
+
+    display: inline-block;
+
+    margin-left: 7.5vw;
+
+    transition: color .25s ease-in-out;
+    text-decoration: none;
+
+    color: #000;
+
+    @include responsive-prop(font-size, $size-subtitle-mobile, $size-subtitle);
+    @include responsive-prop(margin-top, 80, 80);
+  }
+
+  & > .keepreading:hover {
+    transition: none;
+
+    color: $color-brand-dark;
+  }
+
+  & > .keepreading > svg {
+    display: inline-block;
+
+    @include responsive-prop(width, 14, 14);
+    @include responsive-prop(height, 9, 9);
+    @include responsive-prop(margin-left, 8, 8);
+  }
+
+  & > .keepreading > svg .arrow {
+    transition: fill .25s ease-in-out;
+  }
+
+  & > .keepreading:hover > svg .arrow {
+    transition: none;
+
+    fill: $color-brand-dark;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "typewriter",
+  "private": true,
+  "scripts": {
+    "start": "docker-sync start; docker-compose -f docker-compose.yml -f docker-compose.dev.yml up",
+    "local": "docker-sync start; docker-compose -f docker-compose.yml -f docker-compose.dev.yml run --rm engine heroku local:run",
+    "heroku": "docker-sync start; docker-compose -f docker-compose.yml -f docker-compose.dev.yml run --rm engine heroku",
+    "stop": "time docker-compose stop && time docker-sync stop",
+    "clean": "time docker-compose stop && time docker-sync stop && time docker-compose rm -f && time docker-sync clean"
+  },
+  "dependencies": {}
+}

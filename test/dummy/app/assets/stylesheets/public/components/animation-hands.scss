@@ -1,0 +1,91 @@
+.animation-hand {
+  $base-time: 1s;
+  $instantaneous: .0001s;
+
+  #open-hand {
+    animation-name: show-hand;
+    animation-duration: $instantaneous;
+    animation-delay: $base-time;
+
+    opacity: 0;
+
+    animation-fill-mode: forwards;
+  }
+
+  #closed-hand {
+    animation-name: show-hand;
+    animation-duration: $instantaneous;
+    animation-delay: $base-time;
+    animation-direction: reverse;
+
+    opacity: 1;
+
+    animation-fill-mode: forwards;
+  }
+
+  #mouse {
+    transform: translateY(-100vh);
+    animation-name: mouse-down;
+    animation-duration: $base-time;
+    animation-delay: $base-time - .5s;
+
+    animation-fill-mode: forwards;
+  }
+
+  #color {
+    animation-name: mouse-color;
+    animation-duration: .1s;
+    animation-delay: 2*$base-time - .5s;
+
+    animation-fill-mode: forwards;
+
+    fill: #FFF;
+  }
+
+  #lines > * {
+    animation-name: show-lines;
+    animation-duration: .2s;
+    animation-delay: 2*$base-time - .5s;
+
+    animation-fill-mode: forwards;
+
+    stroke-width: 0;
+  }
+
+  @keyframes show-hand {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes mouse-down {
+    from {
+      transform: translateY(-100vh);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes mouse-color {
+    from {
+      fill: #FFF;
+    }
+    to {
+      fill: $color-brand;
+    }
+  }
+
+  @keyframes show-lines {
+    from {
+      stroke-width: 0;
+    }
+
+    to {
+      stroke-width: 1.6px;
+    }
+  }
+}

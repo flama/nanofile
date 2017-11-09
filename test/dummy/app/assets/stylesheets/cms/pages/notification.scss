@@ -1,0 +1,35 @@
+.page-notification {
+  margin-top: 72px;
+  grid-column: 5 / 11;
+
+  @include medium-down {
+    grid-column: 2 / 14;
+
+    & > * {
+      text-align: left;
+    }
+
+    a {
+      line-height: 24px;
+    }
+  }
+
+  & > * {
+    text-align: center;
+  }
+
+  p {
+    line-height: 1.5em;
+
+    margin-top: 16px;
+  }
+
+  a {
+    font-size: $font-size-small;
+
+    display: block;
+
+    width: 100%;
+    margin-top: 24px;
+  }
+}

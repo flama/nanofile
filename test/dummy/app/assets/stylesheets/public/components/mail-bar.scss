@@ -1,0 +1,162 @@
+.mail-bar {
+  $size-text: 12;
+
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding-right: 7.5vw;
+  padding-left: 7.5vw;
+
+  border-top: 1px solid $color-fade;
+  border-bottom: 1px solid $color-fade;
+  background-color: $color-background-footer;
+
+  @include responsive-prop(padding-top, 46, 29);
+  @include responsive-prop(padding-bottom, 48, 22);
+  @include medium-up {
+    align-items: center;
+    flex-direction: row;
+  }
+
+  & > .info {
+    display: flex;
+    flex: 1;
+
+    @include medium-up {
+      margin-right: 2vw;
+      margin-left: 5vw;
+    }
+    @include large-up {
+      justify-content: center;
+
+      margin-right: 0;
+    }
+  }
+
+  & > .info > .icon {
+    display: none;
+
+    background-image: url(image_path('icon_letter.svg'));
+    background-repeat: no-repeat;
+    background-size: contain;
+
+    @include responsive-prop(margin-bottom, -28, -28);
+    @include responsive-prop(margin-right, 46, 46);
+    @include responsive-prop(width, 84, 84);
+    @include responsive-prop(height, 127, 127);
+    @include large-up {
+      display: block;
+    }
+  }
+
+  & > .info > h2 {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-bold;
+    line-height: 1.35;
+
+    margin-top: 0;
+
+    letter-spacing: 1px;
+
+    @include responsive-prop(font-size, 26, 26);
+    @include large-up {
+      width: 40%;
+
+      @include responsive-prop(margin-top, 0, 10);
+    }
+  }
+
+  & > form {
+    display: flex;
+    align-items: flex-start;
+    flex: 3;
+    flex-direction: column;
+
+    margin-right: 5vw;
+
+    @include responsive-prop(margin-top, 27);
+    @include medium-up {
+      flex-direction: row;
+    }
+    @include large-up {
+      flex: 2;
+
+      margin-right: 10vw;
+    }
+  }
+
+  & > form > .input {
+    display: flex;
+    flex: 3;
+    flex-wrap: wrap;
+
+    label {
+      font-weight: $font-weight-medium;
+
+      width: 100%;
+
+      @include responsive-prop(margin-bottom, 8, 8);
+      @include responsive-prop(line-height, 15, 15);
+    }
+
+    &.error > input {
+      border: 1px solid $color-fire-heavy;
+    }
+
+    & > p {
+      font-family: $font-family-open-sans;
+
+      width: 100%;
+
+      color: $color-bullfrog;
+
+      @include responsive-prop(margin-top, 16, 8);
+      @include medium-up {
+        width: 70%;
+      }
+    }
+
+    & > input {
+      box-sizing: border-box;
+      width: 100%;
+
+      @include medium-up {
+        width: 70%;
+      }
+    }
+
+    & > .button {
+      font-family: $font-family-open-sans;
+      font-weight: $font-weight-bold;
+
+      flex: 1;
+
+      width: 100%;
+
+      cursor: pointer;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      color: #FFF;
+      border: 1px solid $color-brand;
+      background-color: $color-brand;
+
+      @include responsive-prop(margin-top, 16);
+      @include medium-up {
+        width: 20%;
+      }
+    }
+  }
+
+  & > form > .input > input,
+  & > form > .input > .button {
+    @include responsive-prop(height, 48, 48);
+  }
+
+  & > form > .input > p,
+  & > form > .input > .button {
+    @include responsive-prop(font-size, $size-text, $size-text);
+  }
+}

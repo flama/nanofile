@@ -1,0 +1,132 @@
+.articles-card {
+  $gap: 26px;
+  $size-title-color-big: 38;
+  $size-title-color: 26;
+  $size-title: 26;
+  $size-title-mobile: 22;
+  $size-info: 11;
+  $size-readingtime: 12;
+  $size-readingtime-mobile: 11;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  & > .card {
+    width: 100%; // 1 per row
+    margin-bottom: 16vw;
+
+    text-decoration: none;
+
+    @include medium-only {
+      width: 41.5vw; // 2 per row
+    }
+    @include large-up {
+      width: 27vw; // 3 per row
+      margin-bottom: 0;
+    }
+  }
+
+  & > .card > .card-content {
+    width: 100%;
+
+    color: #000;
+  }
+
+  & > .card > .card-content > .info {
+    font-weight: $font-weight-semi-bold;
+
+    display: flex;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    @include responsive-prop(margin-top, 21, 21);
+    @include responsive-prop(font-size, $size-info, $size-info);
+  }
+
+  & > .card > .card-content > .info > .date {
+    @include responsive-prop(margin-right, 24, 24);
+  }
+
+  & > .card > .card-content > .title {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-bold;
+    line-height: 1.41;
+
+    display: inline;
+
+    @include responsive-prop(margin-top, 13, 10);
+    @include responsive-prop(font-size, $size-title-mobile, $size-title);
+    @include large-up {
+      line-height: 1.35;
+    }
+  }
+
+  & > .card > .card-content > .readingtime {
+    font-weight: $font-weight-semi-bold;
+
+    margin-top: 24px;
+
+    letter-spacing: 1px;
+    text-transform: uppercase;
+
+    opacity: .5;
+
+    @include responsive-prop(margin-top, 16, 23);
+    @include responsive-prop(font-size, $size-readingtime-mobile, $size-readingtime);
+  }
+
+  & > .card:hover > .card-content > .title {
+    @extend .dotted-link:hover;
+  }
+
+  & > .card.-color {
+    @include large-up {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: center;
+
+      box-sizing: border-box;
+
+      background-color: $color-aquamarine;
+
+      @include responsive-prop(padding, 30, 30);
+    }
+  }
+
+  & > .card.-color > .card-content > .title {
+    @include large-up {
+      @include responsive-prop(font-size, 0, $size-title-color);
+      @include responsive-prop(line-height, 0, 35);
+    }
+  }
+
+  & > .card.-color.-big {
+    @include responsive-prop(padding, 0, 77);
+    @include large-up {
+      width: 56vw; // occupy 2 slots
+    }
+  }
+
+  & > .card.-color.-big > .card-content > .info {
+    @include responsive-prop(margin-bottom, 0, 24);
+  }
+
+  & > .card.-color.-big > .card-content > .title {
+    @include large-up {
+      @include responsive-prop(font-size, 0, $size-title-color-big);
+      @include responsive-prop(line-height, 0 48);
+    }
+  }
+
+  & > .card.-with-image > .card-content > img {
+    display: block;
+  }
+
+  & > .card:last-child:nth-child(3n+2) {
+    margin-right: auto;
+    margin-left: 2vw;
+  }
+}

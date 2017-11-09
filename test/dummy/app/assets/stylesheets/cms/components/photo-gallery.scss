@@ -1,0 +1,10 @@
+.photo-gallery {
+  width: 90vw;
+  margin: 15px auto;
+
+  & > .photo {
+    width: 33%;
+    display: inline-block;
+    vertical-align: top;
+  }
+}

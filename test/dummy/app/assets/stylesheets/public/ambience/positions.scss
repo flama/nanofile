@@ -1,0 +1,10 @@
+$z-index: (
+  top       : 300,
+  overlay   : 200,
+  base      : 100,
+  under     : -1
+);
+
+@function z-index($key) {
+  @return map-get($z-index, $key);
+}

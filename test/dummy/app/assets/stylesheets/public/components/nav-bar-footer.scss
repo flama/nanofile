@@ -1,0 +1,117 @@
+.nav-bar-footer {
+  $gap: 26px;
+  $height: 150;
+  $height-mobile: 277;
+  $size-brand: 16;
+  $size-text: 14;
+
+  color: $color-footer;
+  border-top: 1px solid $color-fade;
+
+  & > .wrapper-container {
+    display: flex;
+
+    height: 100%;
+
+    @include responsive-prop(padding-top, 32, 40);
+    @include responsive-prop(padding-bottom, 50, 65);
+    @include small-only {
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  & > .wrapper-container > .left {
+    @include responsive-prop(margin-right, 0, 76);
+    @include small-only {
+      margin-right: 0;
+
+      text-align: center;
+    }
+  }
+
+  & > .wrapper-container > .left > a.brand {
+    font-weight: $font-weight-bold;
+
+    text-decoration: none;
+    letter-spacing: .28px;
+
+    color: $color-footer;
+
+    @include responsive-prop(font-size, $size-brand, $size-brand);
+    @include small-only {
+      letter-spacing: 0;
+    }
+  }
+
+  & > .wrapper-container > .left > p {
+    opacity: .7;
+
+    @include small-only {
+      opacity: 1;
+    }
+  }
+
+  & > .wrapper-container > .left > p,
+  & > .wrapper-container > p {
+    @include responsive-prop(font-size, $size-text, $size-text);
+    @include responsive-prop(line-height, 20, 22);
+    @include small-only {
+      text-align: center;
+    }
+  }
+
+  & > .wrapper-container > p {
+    @include responsive-prop(width, 744, 744);
+    @include responsive-prop(margin-top, 32, 20);
+    @include medium-up {
+      margin-top: 0;
+    }
+    @include small-only {
+      width: 100%;
+    }
+  }
+
+  & > .wrapper-container > .social {
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+
+    @include responsive-prop(margin-top, 27, 27);
+    @include large-up {
+      margin-right: $gap/2;
+    }
+    @include medium-up {
+      margin-top: -.8vw;
+    }
+    @include small-only {
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  & > .wrapper-container > .social > .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  & > .wrapper-container > .social > .buttons .mailchimp,
+  & > .wrapper-container > .social > .buttons .facebook {
+    display: block;
+
+    content: '';
+    cursor: pointer;
+
+    outline: none;
+
+    @include responsive-prop(width, 40, 40);
+    @include responsive-prop(height, 40, 40);
+  }
+
+  & > .wrapper-container > .social > .buttons .mailchimp:hover path,
+  & > .wrapper-container > .social > .buttons .facebook:hover path {
+    fill: $color-brand;
+  }
+}

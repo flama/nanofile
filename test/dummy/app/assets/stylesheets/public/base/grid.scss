@@ -1,0 +1,8 @@
+.wrapper-container {
+  width: 85vw;
+  margin: 0 auto;
+
+  &.-fixed {
+    margin-top: 60px;
+  }
+}

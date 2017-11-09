@@ -1,0 +1,144 @@
+.page-home {
+  $gap: 26px;
+  $size-header: 50;
+  $size-header-mobile: 32;
+  $size-hero-text: 12;
+  $size-hero-text-mobile: 11;
+  $size-hero-title: 38;
+  $size-hero-title-mobile: 22;
+
+  display: block;
+
+  width: 100%;
+  margin: 0 auto;
+
+  @include responsive-prop(padding-bottom, 40, 100);
+
+  & > .title {
+    font-family: $font-family-pt-serif;
+    font-weight: $font-weight-bold;
+
+    width: 85vw;
+    margin: 0 auto;
+
+    @include responsive-prop(margin-top, 44, 100);
+    @include responsive-prop(padding-left, $gap, $gap);
+    @include responsive-prop(font-size, $size-header-mobile, $size-header);
+  }
+
+  & > .majorhero {
+    @extend .hero;
+
+    width: 90vw;
+    margin: 0 auto;
+
+    @include responsive-prop(height, 350, 600);
+    @include responsive-prop(margin-bottom, 100, 100);
+    @include small-only {
+      min-height: 60vw;
+    }
+  }
+
+  & > .minorhero {
+    @extend .hero;
+
+    width: 82vw;
+    margin-right: auto;
+    margin-left: auto;
+
+    @include responsive-prop(height, 250, 540);
+    @include responsive-prop(margin-top, 100, 100);
+    @include responsive-prop(margin-bottom, 100, 100);
+    @include small-only {
+      min-height: 60vw;
+    }
+  }
+
+  & > .orghero {
+    @extend .hero;
+
+    width: 90vw;
+    height: 25vw;
+    margin: 0 auto;
+
+    @include responsive-prop(margin-bottom, 50, 50);
+    @include medium-only {
+      height: 30vw;
+    }
+    @include small-only {
+      min-height: 46vw;
+    }
+  }
+
+  & > .hero {
+    @extend .hero-container;
+    @extend .hero-container.-with-image;
+
+    @include small-only {
+      width: 100vw;
+      margin-top: 0;
+
+      @include responsive-prop(margin-bottom, 40, 40);
+    }
+  }
+
+  & > .hero::before,
+  & > .hero::after {
+    z-index: z-index(under);
+  }
+
+  & > .majorhero > .overlay {
+    @extend .-blue;
+  }
+
+  & > .minorhero > .overlay {
+    @extend .-orange;
+  }
+
+  & > .minorhero > .content > .info,
+  & > .minorhero > .content > .readingtime {
+    @include responsive-prop(letter-spacing, 1, 1);
+    @include responsive-prop(line-height, 15, 17);
+    @include responsive-prop(font-size, $size-hero-text-mobile, $size-hero-text);
+  }
+
+  & > .minorhero > .content > .title {
+    @include responsive-prop(line-height, 28, 48);
+    @include responsive-prop(font-size, $size-hero-title-mobile, $size-hero-title);
+  }
+
+  & > .majorhero > .content > .title,
+  & > .minorhero > .content > .title {
+    @include responsive-prop(width, 300, 940);
+    @include medium-only {
+      width: 84vw;
+    }
+  }
+
+  & > .headlines {
+    @extend .articles-card;
+
+    width: 85vw;
+    margin: 0 auto;
+
+    @include responsive-prop(margin-top, 40, 80);
+  }
+
+  & > .headlines > .card {
+    @include medium-up {
+      @include responsive-prop(margin-top, 48, 48);
+      @include responsive-prop(margin-bottom, 48, 48);
+    }
+  }
+
+  & > .headlines > .divisor {
+    @include medium-down {
+      display: none;
+    }
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,6 @@
+<%= form_with(model: photo, local: true) do |form| %>
+  <%= uploader_for :image, uploadable: photo %>
+
+  <%= form.submit 'Save', class: 'button -large' %>
+  <%= link_to 'Cancel', photos_path, class: 'cancel' %>
+<% end %>

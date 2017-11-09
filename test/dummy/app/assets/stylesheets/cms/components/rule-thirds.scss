@@ -1,0 +1,23 @@
+.rule-thirds {
+  position: absolute;
+  z-index: z-index(base);
+
+  display: grid;
+
+  width: calc(100% + 2px);
+  height: calc(100% - 1px);
+  margin-left: -1px;
+  margin-top: -1px;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+
+  & > .line {
+    display: flex;
+
+    padding: 2px;
+
+    opacity: .8;
+    border: 1px dashed $color-system;
+  }
+}
