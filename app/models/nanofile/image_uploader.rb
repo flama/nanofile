@@ -1,7 +1,7 @@
 require "image_processing/mini_magick"
 require "image_optim"
 
-module
+module Nanofile
   class ImageUploader < Shrine
     include ImageProcessing::MiniMagick
 
