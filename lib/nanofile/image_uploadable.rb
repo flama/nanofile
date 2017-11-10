@@ -38,15 +38,15 @@ module Nanofile
         include Nanofile::ImageUploader::Attachment.new(name)
 
         define_method "#{name}_src" do
-          Nanofile::ImageAttachment.new(@@sizes[name], self.send(name)).src
+          ImageAttachment.new(@@sizes[name], self.send(name)).src
         end
 
         define_method "#{name}_url" do
-          Nanofile::ImageAttachment.new(@@sizes[name], self.send(name)).src
+          ImageAttachment.new(@@sizes[name], self.send(name)).src
         end
 
         define_method "#{name}_srcset" do
-          Nanofile::ImageAttachment.new(@@sizes[name], self.send(name)).srcset
+          ImageAttachment.new(@@sizes[name], self.send(name)).srcset
         end
       end
 
