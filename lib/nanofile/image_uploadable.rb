@@ -1,3 +1,5 @@
+require "nanofile/image_uploader"
+
 module Nanofile
   class ImageAttachment
     def initialize(sizes, attachment)
