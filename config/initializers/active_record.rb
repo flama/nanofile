@@ -1,1 +1,1 @@
-ActiveRecord::Base.send(:include, Nanofile::ImageUploadable)
+ActiveRecord::Base.send(:include, ::Nanofile::ImageUploadable)
