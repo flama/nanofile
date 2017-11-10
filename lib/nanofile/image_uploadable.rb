@@ -1,3 +1,5 @@
+require "nanofile/image_uploader"
+
 module Nanofile
   class ImageAttachment
     def initialize(sizes, attachment)
@@ -20,7 +22,7 @@ module Nanofile
       @sizes.map do |breakpoint, size|
         width = size.is_a?(Array) ? size [0]: size
         version = "w#{width}".to_sym
-        "#{versions[version].url} #{::Nanofile.breakpoints[breakpoint]}w"
+        "#{versions[version].url} #{Nanofile.breakpoints[breakpoint]}w"
       end.join(', ')
     end
   end
@@ -33,18 +35,18 @@ module Nanofile
     class_methods do
       def has_image(name, sizes: {})
         @@sizes[name] = sizes
-        include ::Nanofile::ImageUploader::Attachment.new(name)
+        include Nanofile::ImageUploader::Attachment.new(name)
 
         define_method "#{name}_src" do
-          ::Nanofile::ImageAttachment.new(@@sizes[name], self.send(name)).src
+          Nanofile::ImageAttachment.new(@@sizes[name], self.send(name)).src
         end
 
         define_method "#{name}_url" do
-          ::Nanofile::ImageAttachment.new(@@sizes[name], self.send(name)).src
+          Nanofile::ImageAttachment.new(@@sizes[name], self.send(name)).src
         end
 
         define_method "#{name}_srcset" do
-          ::Nanofile::ImageAttachment.new(@@sizes[name], self.send(name)).srcset
+          Nanofile::ImageAttachment.new(@@sizes[name], self.send(name)).srcset
         end
       end
 
