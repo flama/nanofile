@@ -9,9 +9,15 @@ module Nanofile
   def self.config(config = {})
     @breakpoints = config.delete(:breakpoints) || {}
 
+    config.merge!({
+      upload_options: {
+        acl: 'public-read'
+      }
+    })
+
     Shrine.storages = {
-      cache: Shrine::Storage::S3.new(prefix: "cache", **config),
-      store: Shrine::Storage::S3.new(prefix: "store", **config),
+      cache: Shrine::Storage::S3.new(**config.merge({prefix: 'cache'})),
+      store: Shrine::Storage::S3.new(**config.merge({prefix: 'store'})),
     }
 
     Shrine.plugin :activerecord
@@ -19,7 +25,7 @@ module Nanofile
     Shrine.plugin :presign_endpoint
   end
 
-  def self.presign
-    Shrine.storages[:cache].presign(SecureRandom.hex)
+  def self.presign(options: {})
+    Shrine.storages[:cache].presign(SecureRandom.hex, options)
   end
 end

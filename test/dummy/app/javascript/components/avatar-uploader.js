@@ -100,18 +100,22 @@ export default class AvatarUploader extends Component {
       method: 'post',
       body: formData
     })
-    .then(data => this.setState({ cached: true }))
-    .then(console.log)
+    .then(data => this.setState({ cached: true, file: file }))
     .catch(console.error)
   }
 
   cachedFile = () => {
     const { key } = this.props.presign.fields
+    const { file } = this.state
 
     return JSON.stringify({
       storage: 'cache',
       id: key.replace(/cache\//, ''),
-      metadata: {},
+      metadata: {
+        size: file.size,
+        filename: file.name,
+        mime_type: file.type,
+      },
     })
   }
 

@@ -13,14 +13,14 @@ module Nanofile
       size = @sizes.values.first
       width = size.is_a?(Array) ? size[0] : size
       version ||= "w#{width}".to_sym
-      versions && versions[version].url
+      versions && versions[version].url(public: true)
     end
 
     def srcset
       @sizes.map do |breakpoint, size|
         width = size.is_a?(Array) ? size [0]: size
         version = "w#{width}".to_sym
-        "#{versions[version].url} #{Nanofile.breakpoints[breakpoint]}w"
+        "#{versions[version].url(public: true)} #{Nanofile.breakpoints[breakpoint]}w"
       end.join(', ')
     end
   end
