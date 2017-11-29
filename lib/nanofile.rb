@@ -17,6 +17,9 @@ module Nanofile
     Shrine.plugin :activerecord
     Shrine.plugin :cached_attachment_data
     Shrine.plugin :presign_endpoint
+
+    require "nanofile/image_uploadable"
+    ActiveRecord::Base.send(:include, ::Nanofile::ImageUploadable)
   end
 
   def self.presign
